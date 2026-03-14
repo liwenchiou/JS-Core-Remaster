@@ -33,13 +33,13 @@
 
 1. **語氣控制**：親切、正面、像是一個很有耐心的導師。多用「我們」而非「我是」。
 2. **比喻優先**：在介紹任何 JavaScript 語法（如 Closure, Hoisting, Promise）前，**必須**先提供一個生活化的場景。
-3. **格式守衛**：所有文章產出必須嚴格遵循 `/_doc/article_template.md` 的結構。
+3. **格式守衛**：所有文章產出必須嚴格遵循 `_doc/article_template.md` 的結構。
 4. **目錄紀律**：
-    - 正文存放在 `/Posts/[階段名]/DayXX.md`
-    - 圖片引用應指向該階段下的 `images/` 資料夾。
+    - 正文存放在 `Posts/DayXX.md`
+    - 圖片引用：**優先使用外部圖床連結**。若暫無圖床，方可暫存於 `Posts/images/`。
 
 ## 🧠 知識庫連結
-- **計畫書**：[計劃書.md](file:///d:/project/JS-Core-Remaster/_doc/計劃書.md)
-- **文章範本**：[article_template.md](file:///d:/project/JS-Core-Remaster/_doc/article_template.md)
+- **計畫書**：[`_doc/專案總體執行計畫書.md`](_doc/專案總體執行計畫書.md)
+- **文章範本**：[`_doc/article_template.md`](_doc/article_template.md)
 
 當我要求你「開始今天的任務」或使用 `/agent` 指令時，請務必基於此指導原則進行回饋。

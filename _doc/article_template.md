@@ -1,6 +1,6 @@
 # Day [編號]：[直接引用計劃書標題]
 
-> **本文同步分享於個人部落格：[部落格名稱](連結)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
 
 ---
 
@@ -65,4 +65,4 @@
 ## � 【圖書館：進階知識卷軸】
 - **MDN 官方文獻：** [連結]
 - **導師推薦情報：** [連結]
-- **本專案的核心筆記：** [每日文章發想筆記.md](file:///Users/qiuliwen/Documents/工程師/project/JS-Core-Remaster/_doc/每日文章發想筆記.md)
+
