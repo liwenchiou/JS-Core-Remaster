@@ -18,6 +18,7 @@ description: 開啟《勇者轉職傳說》統一指令中心
 - **`/sync`**：執行 Git 工作流（調用 `git` Skill），將今日修煉進度同步至倉庫。
 - **`/status`**：對照「專案總體執行計畫書」，檢查當前已完成的進度與待辦事項。
 - **`/template`**：校準當前文章是否符合大導師規定的八大區塊格式。
+- **`/codepen [DayXX]`**：調用 `codepen-generator` Skill，產出當日演武場練習題目。
 
 ## 📚 知識寶庫 (The Archive)
 - [專案總體執行計畫書](_doc/專案總體執行計畫書.md)
