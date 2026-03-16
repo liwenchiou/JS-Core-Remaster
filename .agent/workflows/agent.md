@@ -13,6 +13,8 @@ description: 開啟《勇者轉職傳說》統一指令中心
 - **`/review`**：調用 `article-reviewer` Skill，對當前編輯的文章進行品質與世界觀鑑定。
 - **`/concept`**：針對當前技術難點，生成 Excalidraw 圖解構思與配色建議。
 - **`/analog`**：優化當前段落的比喻，使其更具備 RPG 冒險感。
+- **`/feedback`**：調用 `feedback` Skill，以「見習勇者」與「重修勇者」的雙重身分，進行最真實的內容審視。
+
 
 ## 🚀 進度與技術管理 (Operations)
 - **`/sync`**：執行 Git 工作流（調用 `git` Skill），將今日修煉進度同步至倉庫。
