@@ -24,11 +24,24 @@
     3. **React 伏筆**：為未來開發留下的關鍵直覺。
 - **避坑提醒**：面試最愛考的易錯點與底層陷阱。
 
-## 4. 專案目錄結構規範
-為了維持 Repo 的整潔與 Git 管理效率，請遵循以下配置：
-- **文章正文**：`/Posts/[階段名]/DayXX.md`
-- **圖解圖片**：`/Posts/[階段名]/images/DayXX_logic.png` (採相對路徑引用)
-- **程式碼範例**：`/CodeSamples/DayXX/index.html` (若有大型練習時使用)
+## 4. 專案目錄結構與發布規範 (The Remaster Pipeline)
+為了維持 Repo 的整潔與確保文章品質，請遵循以下流程：
+
+### 🛠️ 生產線配置
+- **草稿沙盒 (Drafts)**：`_doc/drafts/DayXX.md`
+    - *說明*：所有新文章與複審修正皆在此目錄進行。
+- **正式發布 (Production)**：`Posts/[階段名]/DayXX.md`
+    - *說明*：僅存放通過團隊鑑定後的完成品。
+
+### 🚀 發布標準作業程序 (Publishing SOP)
+1. **完成撰寫**：在 `_doc/drafts/` 生成初稿。
+2. **品質鑑定**：`@Reviewer` 通過術語檢查，`Testers` 通過讀者鑑定。
+3. **執行發布指令**：
+    - 使用 `@Team Publish DayXX` 觸發自動發布。
+    - 檢查檔案編碼是否為 `UTF-8`。
+    - 將檔案從 `_doc/drafts/` 移動至 `Posts/[階段名]/`。
+    - 更新 `_doc/state/TODO.md` 中的進度。
+    - 執行 Git Commit 進行存檔。
 
 ## 5. 視覺化圖解 (Excalidraw) 風景定義
 為了減少讀者的認知負擔，建立統一的視覺語意：

@@ -14,6 +14,7 @@ description: 開啟《勇者轉職傳說》統一指令中心
 - **`/concept`**：針對當前技術難點，生成 Excalidraw 圖解構思與配色建議。
 - **`/analog`**：優化當前段落的比喻，使其更具備 RPG 冒險感。
 - **`/feedback`**：調用 `feedback` Skill，以「見習勇者」與「重修勇者」的雙重身分，進行最真實的內容審視。
+- **`/publish [DayXX]`**：自動執行發布 SOP，將檔案從 `drafts/` 移至 `Posts/` 並同步狀態。
 
 
 ## 🚀 進度與技術管理 (Operations)

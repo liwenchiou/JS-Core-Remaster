@@ -26,7 +26,7 @@
    讓咒語在定義前就能成功發動。
 */
 
-// console.log(checkStatus()); // 🎯 目標：解除註解後不報測，並印出狀態
+// console.log(checkStatus()); // 🎯 目標：解除註解後不報錯，並印出狀態
 
 const checkStatus = function() {
     return "🛡️ 勇者狀態：體力充沛！";
@@ -53,7 +53,7 @@ const checkStatus = function() {
 /* 
    任務：請寫一個名為 `getHero` 的箭頭函式。
    1. 接受一個參數 `name`。
-   2. 使用一行代碼（不寫 return）回傳物件：{ heroName: name }。
+   2. 使用一行程式碼（不寫 return）回傳物件：{ heroName: name }。
    
    🎯 提示：別忘了為了讓物件不消失，需要加上防震氣泡 ( ) 哦！
 */

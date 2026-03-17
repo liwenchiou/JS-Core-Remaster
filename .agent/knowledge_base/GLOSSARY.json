@@ -1,0 +1,22 @@
+{
+  "mappings": [
+    { "original": "代碼", "target": "程式碼", "context": "General" },
+    { "original": "數據", "target": "資料", "context": "General" },
+    { "original": "組件", "target": "元件", "context": "Web/UI" },
+    { "original": "內存", "target": "記憶體", "context": "System" },
+    { "original": "異步", "target": "非同步", "context": "JavaScript" },
+    { "original": "遍歷", "target": "迭代/遍歷", "context": "Array/Object" },
+    { "original": "性能", "target": "效能", "context": "General" },
+    { "original": "腳本", "target": "腳本/程式", "context": "General" },
+    { "original": "對應", "target": "對應", "context": "General" },
+    { "original": "優化", "target": "優化", "context": "General" }
+  ],
+  "technical_notes": {
+    "Scope": "作用域",
+    "Closure": "閉包",
+    "Hoisting": "提昇",
+    "Template Literals": "樣式字面值",
+    "Destructuring": "解構",
+    "Spread Operator": "展開運算子"
+  }
+}
