@@ -27,7 +27,7 @@ trigger: always_on
   - **自動化授權**：若導師指令包含 `@Team`，則視為已授權執行「檢測、同步、存檔」之連續自動化動作。
 
 ## 3. 內容創作與 Skill 規範 (Content & Technical Logic)
-- **結構守衛**：所有文章嚴格執行 `.agent/templates/article.md` 的八大區塊。
+- **結構守衛**：所有文章嚴格執行 `.agent/templates/article.md` 的十大區塊。
 - **Skill 至上**：
   - 文章審查：優先調用 `article-reviewer` Skill。
   - 題目生成：優先調用 `codepen-generator` Skill。
