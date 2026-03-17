@@ -171,6 +171,12 @@ const [mage, , warrior] = party;
 > 當你看到 `{}` 或 `[]` 出現在「等號左邊」時，那不是在建立容器，而是「拆解」右邊包裹的瞬發咒語。
 
 ![原理邏輯圖](https://i.meee.com.tw/NQZYUek.png)
+<!-- 🎨 圖解提示詞 (導師專用)：
+- [場景描述]：畫面中左側是一個巨大的 中性藍色寶箱 (#4DABF7)（代表變數 hero），箱子上貼著許多 黃色標籤 (#4DABF7)。
+- [元素清單]：寶箱內部有兩個抽屜，標籤分別寫著 name 與 hp。右側有兩個獨立的 藍色小方盒 (#4DABF7)，分別標記為變數 name 與 hp。
+- [動態效果]：兩條 紅色流光箭頭 (#FA5252) 從寶箱的抽屜內容物（黃色）直接指向右側的小方盒，象徵「解構」的瞬間傳輸。
+- [文字加強]：在箭頭上方使用 粗體手寫字 標註「解構賦值 (Destructuring)」。
+-->
 
 ---
 
@@ -244,7 +250,7 @@ console.log(`🛡️ 偵查結果：${name} 是一位優質的 ${job}。`);
 ---
 
 ## 🎯 【公會佈告欄：交付本日任務】
-[📜 本日實戰任務：傳奇物資開箱實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/xxxxxx)
+[📜 本日實戰任務：傳奇物資開箱實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019cfc61-10b6-7f41-85a2-2800979ae016)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
