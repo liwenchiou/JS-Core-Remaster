@@ -12,13 +12,11 @@
 ---
 
 ## 🛡️ 【公會委託：消失的藍色裝備】
-> **新夥伴，歡迎來到冒險中第一個讓人懷疑人生的路口：**
+> **公會長的咆哮聲幾乎要把倉庫的天花板震塌了...**
 > 
-> 你在公會租了一套「勇者藍」的傳奇皮甲（`basicArmor`）。想著明天的派對要出風頭，你對著它下了一道指令：`const myArmor = basicArmor;`，並開心地把 `myArmor` 染成了亮紅色。
+> 「那原本是藍色的傳奇皮甲（`basicArmor`）！誰准你把它染成這種刺眼的亮紅色的？」你握著手裡的染色劑，一臉茫然。你明明是宣告了一個自己的副本：`const myArmor = basicArmor;`，你以為染的是「自己的份」，沒想到連公會的原版也遭殃了。
 > 
-> 結果第二天，當你回到公會倉庫，發現公會長那套原本是藍色的 `basicArmor` 竟然也變成了刺眼的亮紅色！你被罰打掃巨龍排泄物一整個月。
-> 
-> 這不是什麼邪惡的詛咒，這是 JS 進階冒險者必須掌握的基礎原理——**「傳址（Pass by Reference）」**。
+> 這不是詛咒，這是 JS 進階冒險者必須掌握的殘酷真相—— **「傳址 (Pass by Reference)」**。物件與陣列是有靈魂連結的，如果你不懂得如何切斷它，你就會一直打掉別人的寶物。
 
 ---
 
@@ -39,7 +37,7 @@ b = 20;    // 修改 b，a 依舊是 10
 
 console.log(a,b); //10,20
 ```
-![](https://i.meee.com.tw/Ptdmt89.jpg)
+![Day 05：基礎型別——影印傳單](https://i.meee.com.tw/Ptdmt89.jpg)
 #### 物件型別：共用鑰匙 (Pass by Reference)
 這包含 `Object`, `Array`, `Function`。
 
@@ -52,7 +50,7 @@ myArmor.color = 'gold';      // 進入同一個房間換掉盔甲顏色
 console.log(basicArmor.color); // 輸出 'gold'
 ```
 
-![](https://i.meee.com.tw/y6JXifY.jpg)
+![Day 05：物件型別——共用鑰匙](https://i.meee.com.tw/y6JXifY.jpg)
 #### 進階觀念：重新賦值 (Re-assignment)
 這是一個常見的陷阱。如果你不是修改物件的「內容」，而是給變數一個新的物件，這就像是「換了一把新鑰匙」，它會斷開與舊地址的連結。
 
