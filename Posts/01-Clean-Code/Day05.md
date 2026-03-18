@@ -118,7 +118,7 @@ console.log(originalHero.hp); // 輸出：100 (安全！)
 ## 🏰 【勇者精英課：邁向職人的進階架構】
 ### 為什麼 `const` 宣告的物件還是能改？
 這是一個非常經典的誤解。
-```javascript=
+```javascript
 const player = { name: "A" }
 ```
 *   `const` 保證的是你這把 **「鑰匙」** 不能換成別人的（你不能把 `player` 重新指向另一個物件）。
