@@ -25,13 +25,13 @@
 
 ## 💡 【導師講義：圖解底層真相】
 
-### 1. 三大物件掃描儀 (Keys, Values, Entries)
+### 1. 三大物件掃描儀 (Modern Object Methods)
 物件不像陣列（Day 04）那樣有順序，它就像個充滿隔層的抽屜。若想對它進行大規模的操作，我們通常會先施展「變身魔法」，將抽屜的資訊轉化為陣列（名單）。
 
 #### 🛠️ 掃描儀對照：
-*   **`Object.keys()`**：只要「標籤名（Key）」。
-*   **`Object.values()`**：只要「內容物（Value）」。
-*   **`Object.entries()`**：我全都要！標籤名與內容物成對打包。
+*   **`Object.keys()`**：只要「標籤名（Key）」。最常用於檢查屬性是否存在。
+*   **`Object.values()`**：只要「內容物（Value）」。最適合用來計算數值總和。
+*   **`Object.entries()`**：我全都要！標籤名與內容物成對打包成二維陣列。
 
 > **導師的圖解心法：** 觀察下面的圖，你可以看到物理上的物件（抽屜）被掃描儀掃過後，變出了一條條整齊的傳送帶（陣列）。這樣一來，我們就能對物件使用那些強大的「陣列魔法」了。
 
@@ -46,7 +46,7 @@
 ---
 
 ## 🛖 【營火叮嚀：為什麼物件不能直接 map？】
-> 導師常看到新夥伴想對物件寫 `.map()`。記住，JavaScript 的寫作者當初設計時，將物件定位為「儲存特定屬性」的箱子，而不是「清單」。
+> 導師常看到新夥伴想對物件寫 `.map()` 或 `.filter()`。記住，JavaScript 的寫作者當初設計時，將物件定位為「儲存特定屬性」的箱子（Key-Value pairs），而不是「有序清單」。
 > 
 > **「工具的錯位是錯誤的開始。」** 如果你想過濾、轉換寶箱裡的內容，最好的做法就是先用 `Object.entries()` 把它打開，轉成陣列後進行陣列加工，最後再裝回去。這不僅是為了讓程式碼能跑，更是為了保持資料結構的純潔性。
 
@@ -54,48 +54,48 @@
 
 ## ⚔️ 【演武場：從冒險者到勇者辛梅爾】
 
-### 招式示範：混沌資料過濾 (Data Transformation)
+### 招式示範：混沌資料轉換 (Data Transformation)
 
-#### ❌ 冒險者：手動苦勞點名
+#### ❌ 冒險者：雷達掃描法 (for...in)
+> **導師註解**：這是舊公會常見的寫法，但它有個缺點：它會不小心掃到「祖先遺留的垃圾屬性 (Prototype)」，且語法略顯冗長。
 ```javascript
-const loot = { sword: 10, potion: 5, junk: 0 };
-
-// 只要大於 0 的？難道我要寫一堆 if...else 嗎？
-console.log(loot.sword); 
+const loot = { sword: 10, potion: 5 };
+for (let key in loot) {
+  console.log(`${key} 數量：${loot[key]}`);
+}
 ```
 
-#### ✅ 勇者辛梅爾：自動化掃描連線
+#### ✅ 勇者辛梅爾：全自動掃描術 (Object.entries)
 ```javascript
-const loot = { sword: 10, potion: 5, junk: 100 };
+const loot = { sword: 10, potion: 5 };
 
-// 將物件轉化為清單，並過濾掉我不想要的 (這裡先預演 Day 09 的 filter 概念)
-const activeLoot = Object.entries(loot)
-  .filter(([item, count]) => item !== "junk");
-
-console.log(activeLoot); // [["sword", 10], ["potion", 5]]
+// 將物件一次炸開，直接用解構處理 Key 與 Value
+Object.entries(loot).forEach(([item, count]) => {
+  console.log(`🛡️ 偵察報告：${item} 剩餘 ${count} 件`);
+});
 ```
-
-> **導師講評：** 你看，勇者的寫法不論寶箱裡有 3 個還是 3000 個屬性，邏輯都一樣簡潔。這讓你的程式具備了應對「巨量物資」的擴充能力。
 
 ---
 
 #### ⚠️ 【實戰雷區：避開那些致命陷阱】
-> **1. `for...in` 的詛咒**：在舊地圖中，你可能會看到 `for(let key in obj)` 的寫法。導師建議你 **盡量少用**。因為它會不小心抓到「祖先遺留下來的屬性 (Prototype keys)」，導致你清點物品時多出一些根本不存在的東西。
-> **2. 轉換後的型別**：永遠記住，`Object.keys()` 這些掃描儀噴出來的東西 **永遠是陣列**。如果你需要再把它轉回物件，现代開發者會使用 `Object.fromEntries()` 這個逆向魔法。
+> **1. Prototype 的干擾**：在使用 `for...in` 時，除非你加上 `hasOwnProperty` 檢查，否則你可能會抓到不屬於這個寶箱的標籤。 modern 寫法 `Object.keys()` 會自動幫你避開這些陷阱。
+> **2. 陣列與物件的逆轉**：如果你用 `Object.entries` 處理完一箱物資後想再把它變回「寶箱」，請使用現代語法 **`Object.fromEntries(newArray)`**。
 
 ---
 
-## 🏰 【勇者精英課：動態標籤處理】
-在現代冒險中，後端傳來的 Key 標籤名稱有時候是「動態」的（例如日期 `2024-03-18`）。你無法在程式碼裡寫死 `.2024-03-18`。
-這時候，搭配 Day 04 學過的 **「括弧法 `obj[key]`」**，配合今天的遍歷技術，你就能處理任何「難以捉摸」的資料結構。
+##  castle 【勇者精英課：寶物打包術 JSON】
+當你要把整箱寶物寄回遙遠的公會總部（API）或是存進 Day 16 的 LocalStorage 時，你必須把物件「序列化」成一個扁平的文字包。
+*   **`JSON.stringify(obj)`**：把寶箱壓縮放進郵件包裹（字串）。
+*   **`JSON.parse(string)`**：把收到的包裹拆開，變回可操作的立體寶箱。
+此外，這套招式也是最簡單的「深拷貝（Deep Copy）」法，能幫你徹底斷開所有層級的靈魂連結。
 
 ---
 
 ## 📝 【夥伴筆記：今日修煉精華】
 ##### *這份筆記是你的隨身護身符，卡關時看一眼，真相就在裡面。*
-- **Object.keys()**：提取所有的標籤名，最常用於檢查屬性是否存在。
-- **Object.values()**：提取內容物，適合用來計算總和（如總金幣）。
-- **Object.entries()**：提取標籤與內容的成對清單，是資料轉換的標準起手式。
+- **Object.keys/values**：快速提取單一面向的名單。
+- **Object.entries**：最彈性的開箱法，將物件導航至陣列世界。
+- **JSON 轉化**：物件與字串之間的跨維度轉換，是資料持久化的唯一方式。
 
 ---
 
@@ -107,13 +107,13 @@ console.log(activeLoot); // [["sword", 10], ["potion", 5]]
 > 1. 完成 CodePen 中關於提取物件 Key 與 Value 並組合為新描述的挑戰。
 > 2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
 >    - **初心者**：當你第一次看到物件內容整齊地排成陣列「吐」出來時，你覺得哪個方法最有魔力？
->    - **冒險者**：如果我們想計算一個物件中所有數值屬性的總和，你會建議夥伴用 keys 還是 values？為什麼？
+>    - **冒險者**：如果我們想計算一個物件中所有數值屬性的總合，你會建議夥伴用 keys 還是 values？為什麼？
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
 - **MDN 官方文獻：** [Object.keys()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-- **實戰導引：** [Object.entries() 與陣列操作的連動](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
+- **實戰導引：** [Object.fromEntries() — 將清單轉回物件](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
 
 ---
 *《JS 核心重構：勇者轉職傳說》| 容器掃描完畢、清單就緒、準備進入生產線*
