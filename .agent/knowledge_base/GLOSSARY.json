@@ -9,7 +9,11 @@
     { "original": "性能", "target": "效能", "context": "General" },
     { "original": "腳本", "target": "腳本/程式", "context": "General" },
     { "original": "對應", "target": "對應", "context": "General" },
-    { "original": "優化", "target": "優化", "context": "General" }
+    { "original": "優化", "target": "優化/最佳化", "context": "General" },
+    { "original": "回調", "target": "回呼", "context": "JavaScript" },
+    { "original": "構造函數", "target": "建構子", "context": "Object" },
+    { "original": "解構賦值", "target": "解構", "context": "ES6" },
+    { "original": "箭頭函數", "target": "箭頭函式", "context": "ES6" }
   ],
   "technical_notes": {
     "Scope": "作用域",

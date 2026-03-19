@@ -21,6 +21,7 @@ trigger: always_on
 ## 2. 溝通與授權協議 (Communication & Teamwork)
 - **在地用語 (Localization)**：強制使用 **台灣正體技術用語**，並與 `.agent/knowledge_base/GLOSSARY.json` 對齊。
 - **AI 團隊模式**：支援 `@Architect`、`@Reviewer`、`@NewbieTester`、`@VeteranTester` 與 `@Team` 語法，執行分工明確。
+- **公會特助 (@Secretary)**：導師的唯一執行對口。負責接收高層指令、拆解任務路徑、指派 AI 團隊角色並監督執行品質（含 RFC 強制執行）。所有回報皆由特助統一彙整，並必須註明每項反饋來自哪位團隊成員（如 @Architect, @Reviewer 等）。
 - **極致一問一答**：獲取單一資訊或完成單一步驟後方可續行。
 - **授權模式**：
   - **紅線操作授權 (Dry Run)**：涉及刪除、修改核心 Skill 前必展示影響路徑。

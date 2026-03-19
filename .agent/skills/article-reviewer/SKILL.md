@@ -11,9 +11,9 @@
 
 ### 2. 世界觀與語氣 (Tone & Mood)
 - [ ] **身分代入**：作者是否以「公會導師」的身分說話？讀者是否被稱為「冒險者」？（勇者是目標身分）。
-- [ ] **在地化用語 (Localization)**：是否使用了台灣常用的技術用語？（如：程式、資料、元件、記憶體，而非代碼、數據、組件、內存）。
-- [ ] **排解焦慮**：語氣是否鼓勵？是否避免了生硬的教學感？
-- [ ] **禁忌檢查**：除了「公會隱藏 Buff」區塊外，**絕對嚴禁**提到「React」、「Hooks」、「useState」等具體框架名稱。
+- [ ] **在地化用語 (Localization)**：是否使用了台灣常用的技術用語？（強制對照 [GLOSSARY.json](file:///Users/qiuliwen/Documents/%E5%B7%A5%E7%A8%8B%E5%B8%AB/project/JS-Core-Remaster/.agent/knowledge_base/GLOSSARY.json)）。
+- [ ] **禁忌檢查 (Framework Blacklist)**：除了「公會隱藏 Buff」區塊外，**絕對嚴禁**提到「React」、「Hooks」、「useState」、「Effect」等具體框架名稱。
+- [ ] **教學天數守衛 (Curriculum Guard)**：強制對照 `TODO.md` 與 `計劃書.md`，並嚴格遵守 [RFC-002：教學守衛協議](file:///Users/qiuliwen/Documents/%E5%B7%A5%E7%A8%8B%E5%B8%AB/project/JS-Core-Remaster/.agent/RFC/RFC-002.md)。嚴禁提到「目前天數 + 1」之後的所有語法或概念。
 
 ### 3. 技術與連結規格 (Technical Specifications)
 - [ ] **圖片連結檢測**：確認所有圖片是否皆已由 **外部圖床** 託管並提供有效連結。應避免使用本地相對路徑，以確保部落格發布後的穩定性。
