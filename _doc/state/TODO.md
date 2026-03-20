@@ -5,7 +5,8 @@
 ### 🚀 進行中 (In Progress)
 - [x] Day 11 - 【類別 Class】 ... 正式發布 ✅ (2026-03-20)
 - [x] Day 12 - 【邏輯開關】 ... 正式發布 ✅ (2026-03-20)
-- [ ] Day 13 - 【DOM 標籤】 草稿審核中 @Reviewer
+- [x] Day 13 - 【DOM 標籤】 ... 正式發布 ✅ (2026-03-20)
+- [ ] Day 14 - 【事件監聽】 草稿生成中 @Reviewer
 
 ### 📝 待辦事項 (Backlog)
 - [x] Day 11 - 【類別 Class】 (Draft: Day11.md)
