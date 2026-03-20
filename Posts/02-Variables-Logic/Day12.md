@@ -23,10 +23,39 @@
 ### 1. 短路判斷 (Short-circuiting)
 [在 JS 的邏輯運算中，它非常「懶惰」。如果前面的條件已經足夠決定結果，它就根本不會去執行後面的代碼。]
 
-*   **&& (且)**：只要前面是 `false`，後面就連看都不看。
-*   **|| (或)**：只要前面是 `true`，後面就直接略過。
-*   **?? (空值合併)**：專門對付 `null` 或 `undefined`。
+*   **`&&` (且)：通行證**。只要前面是 `false`，後面就連看都不看。
+*   **`||` (或)：備胎**。只要前面是 `true`，後面就直接略過。
+*   **`??` (空值合併)：精準守衛**。專門對付 `null` 或 `undefined`。
 
+### 2. 短路運算子的運作真相
+#### 🟢 `&&` (且)：通行證 / 守門員
+底層邏輯：從左往右看，遇到第一個 Falsy（假值，如 0, "", null, undefined, NaN, false）就直接回傳該值，不再往後走。如果全是真值，則回傳最後一個。
+
+實戰場景：確保物件存在才存取屬性。
+
+```JavaScript
+// 如果 user 存在，才讀取 user.name，否則直接回傳 null
+const name = user && user.name; 
+```
+#### 🟡 || (或)：備胎 / 預設值
+底層邏輯：從左往右看，遇到第一個 Truthy（真值）就直接回傳該值。如果全是假值，則回傳最後一個。
+
+實戰場景：設定簡易預設值。
+
+```JavaScript
+// 如果 inputName 是空的 (Falsy)，就給他 "訪客"
+const display = inputName || "訪客"; 
+```
+#### 🔵 ?? (空值合併)：精準守衛
+底層邏輯：這是 ES2020 新增的語法。它只在左側為 null 或 undefined 時，才會去看右側的值。它會保留 0 或 "" 這些有意義的假值。
+
+實戰場景：處理數值或字串的預設值。
+
+```JavaScript
+let score = 0;
+let result1 = score || 60; // 結果是 60 (因為 0 是 Falsy)
+let result2 = score ?? 60; // 結果是 0 (因為 0 不是 null/undefined)
+```
 > **導師的圖解心法：** 想像這是一組連環陷阱。`&&` 是「通行證」，只有通過第一關才能領第二關獎勵；`||` 是「備胎」，第一關爆胎了才換二號上場。
 
 ![原理邏輯圖](./images/Day12_logic_diagram.png)
@@ -77,12 +106,20 @@ const power = monster.strength || hero.basePower || 10;
 > **導師講評：** 你看，這種寫法不僅能省下大量行數，更重要的是它定義了資料的「流向」。老練的勇者一眼就能看出你的邏輯備案是什麼。
 
 #### ⚠️ 【實戰雷區：0 與空字串的冤獄】
-> 在 JS 中，`0`、`""`、`NaN`、`false` 都被視為 Falsy。如果你用 `||` 設預設值，這些值都會被自動略過。請確認你的業績是不是真的「沒達成」，還是讀者本來就是領「0」分獎勵？請優先使用 `??`。
+> 在 JS 中，`0`、`""`、`NaN`、`false` 都被視為 Falsy。如果你用 `||` 設預設值，這些值都會被自動略過。
+> 
+> ```javascript
+> const score = 0;
+> const result = score || 60; // 🛑 冤獄！本來是 0 分，現在變成 60 分了。
+> const safeResult = score ?? 60; // ✅ 真相：只有 null/undefined 才給 60 分。
+> ```
+> 
+> 請確認你的業績是不是真的「沒達成」，還是讀者本來就是領「0」分獎勵？請優先使用 `??`。
 
 ---
 
 ## 🏰 【勇者精英課：邁向職人的進階架構】
-[在 React 與現代框架中，你將頻繁使用 `&&` 來控制畫面的顯示與否（例如：`isLoading && <LoadingSpinner />`）。掌握短路判斷，是從「操作 DOM 的士兵」轉型為「架構邏輯的將軍」的第一步。]
+[在現代 UI 元件與驅動架構中，你將頻繁使用 `&&` 來控制畫面的顯示與否（例如：`isLoading && 顯示加載動畫()`）。掌握短路判斷，是從「操作 DOM 的士兵」轉型為「指揮資料流的將軍」的第一道門檻。]
 
 ---
 
@@ -95,7 +132,7 @@ const power = monster.strength || hero.basePower || 10;
 ---
 
 ## 🎯 【公會佈告欄：交付本日任務】
-[📜 本日實戰任務：冒險者屬性配置 (CodePen)](https://codepen.io/your-library/pen/day12)
+[📜 本日實戰任務：冒險者屬性配置 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b99-c203-764c-b053-59cbcba7cf30)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
