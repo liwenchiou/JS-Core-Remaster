@@ -3,8 +3,8 @@
 ## 🎯 當前賽段：第二階段 - 陣列、物件與邏輯控制 (Day 11 - 14)
 
 ### 🚀 進行中 (In Progress)
-- [x] Day 11 - 產出 Day 11 文章草稿 (類別 Class) @Secretary
-- [x] Day 11 - 產出 D11.js 演武場題目 (Class 實作) @Architect
+- [x] Day 11 - 【類別 Class】 ... 正式發布 ✅ (2026-03-20)
+- [ ] Day 12 - 【邏輯開關】 草稿審核中 @Reviewer
 
 ### 📝 待辦事項 (Backlog)
 - [x] Day 11 - 【類別 Class】 (Draft: Day11.md)

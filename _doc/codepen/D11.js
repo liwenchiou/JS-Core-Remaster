@@ -17,11 +17,11 @@
 
 /* ✍️ 作答區 */
 // 請在此定義 Slime 類別與 constructor
-// 並增加一個 attack() 方法，內容顯示：`${this.color} 史萊姆：發動撞擊！`
+// 並增加一個 attack() 方法，內容顯示：`${this.name} 發動了攻擊！`
 
 
 // 測試代碼 (當你寫完後，以下應能正常執行)
-// const greenSlime = new Slime('綠色', 10);
+// const greenSlime = new Slime('小綠', 10);
 // greenSlime.attack();
 
 // ==========================================

@@ -25,13 +25,47 @@
 ### 1. 勇者模板 (Class) 與 史萊姆分身 (Instance)
 [在 JS 的世界裡，`Class` 並不是什麼神祕的咒語，它就是一間**工廠**。你定義了工廠的規格書（Constructor），往後只要喊一聲 `new`，工廠就會照著規格生出一個活生生的物件。]
 
+### 📋2. 規格書、工廠與產品的關係
+
+| 概念角色       | 實際對應 (JS)   | 說明                                                                 |
+|----------------|----------------|----------------------------------------------------------------------|
+| Class (類別)   | 勇者設計圖      | 定義屬性（如：血量、攻擊力）與方法（如：揮劍）。                     |
+| Constructor    | 工廠規格書      | 規定每一個產出的勇者，初始狀態應該長什麼樣子。                       |
+| Instance (實例)| 史萊姆分身 A    | 透過 `new` 產生出來的獨立個體，擁有自己的狀態。                      |
+
+### 3. 程式碼實作對照
+當我們寫下程式碼時，其實就是在進行這場「生產」過程：
+
+```JavaScript
+// 1. 定義工廠 (Class)
+class Slime {
+  constructor(name, hp) {
+    this.name = name; // 規格書：每個勇者都要有名字
+    this.hp = hp;     // 規格書：每個勇者都要有血量
+  }
+
+  attack() {
+    console.log(`${this.name} 發動了攻擊！`);
+  }
+}
+
+// 2. 呼叫工廠生出分身 (Instance)
+const slimeA = new Slime("小綠史萊姆", 100);
+const slimeB = new Slime("大藍史萊姆", 500);
+
+slimeA.attack(); // 輸出：小綠史萊姆 發動了攻擊！
+```
+#### 4. 關鍵真相：獨立性
+雖然 `slimeA` 與 `slimeB` 都是從同一個 Slime 工廠（`Class`）生產出來的，但它們是完全獨立的個體。
+
+如果你把 `slimeA` 的血量扣掉 `10` `點，slimeB` 的血量不會受到任何影響。
+
+這就是為什麼我們說 `Instance` 是根據藍圖「實例化」出來的結果。
+
 > **導師的圖解心法：** 想像中間有一個巨大的「史萊姆藍圖」，下方有三隻穿著相同制服的史萊姆。雖然每隻史萊姆的顏色（狀態）可能不同，但他們擁有的招式（方法）都是連回那張藍圖的。
 
-![原理邏輯圖](./images/Day11_logic_diagram.png)
+![原理邏輯圖](https://i.meee.com.tw/6mPraEU.jpg)
 
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除)：
-[元素：一個藍色的立體模具 (Class: Slime)；模具內部標註 constructor(color, hp)；模具下方產出三個不同顏色的史萊姆 (Instances)；史萊姆身上冒出對話框標註 attack()；有一條紅色虛線 (Prototype Chain) 從史萊姆連回模具頂部]
--->
 
 ---
 
@@ -104,7 +138,7 @@ army.forEach(s => s.attack('撞擊'));
 ---
 
 ## 🎯 【公會佈告欄：交付本日任務】
-[📜 本日實戰任務：史萊姆戰鬥模擬器 (CodePen)](https://codepen.io/your-library/pen/day11)
+[📜 本日實戰任務：史萊姆戰鬥模擬器 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b86-e2e0-7498-b538-17f381526522)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
