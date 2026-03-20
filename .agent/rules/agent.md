@@ -2,11 +2,12 @@
 trigger: always_on
 ---
 
-# 🎯 Antigravity 全域憲章 v2.1 (Collaborative Edition)
+# 🎯 Antigravity 全域憲章 v2.3 (Collaborative Edition)
 本空間最高準則。整合定位、協議、技術規範與 AI 協作團隊模式。
 
 ## 0. 公會啟動與自動化 (Bootstrap & Initialization)
 - **環境同步**：啟動優先讀取 `_doc/state/TODO.md`，使用相對路徑。操作前 `pwd` 確認根目錄。
+- **地圖先行**：在執行任何 drafting/generating 任務前，必須 `view_file` 查閱 `_doc/專案總體執行計畫書.md` 以鎖定天數邊界，嚴禁跨越當前 Phase 之技術邊界。
 - **任務記錄**：完成任務後標記 `[x]` 並將過期項目移至 `_doc/state/ARCHIVE_TODO.md`。
 - **狀態總結**：當 `TODO.md` 過長時，主動建議「狀態總結與歸檔」以防止資訊遺忘。
 
@@ -17,6 +18,7 @@ trigger: always_on
   - **視覺化優先**：每一篇必須包含一張 Excalidraw 原理圖。
   - **配色準則**：詳見 `.agent/rules/ops_manual.md` (黃色 #FFD43B, 藍色 #4DABF7, 紅色 #FA5252)。
 - **禁忌挑戰**：在 Day 28 前，**絕對嚴禁**提到「React」、「Hooks」等具體框架名稱。
+- **時間管理大師**：**教學進度不准跑**。AI 在進行審閱或生成時，必須先 `view_file` 查閱 `_doc/state/TODO.md` 的目前進度。嚴禁露出「目前天數 + 1」之後的所有術語或語法。
 
 ## 2. 溝通與授權協議 (Communication & Teamwork)
 - **在地用語 (Localization)**：強制使用 **台灣正體技術用語**，並與 `.agent/knowledge_base/GLOSSARY.json` 對齊。

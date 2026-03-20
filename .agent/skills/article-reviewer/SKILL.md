@@ -11,9 +11,11 @@
 
 ### 2. 世界觀與語氣 (Tone & Mood)
 - [ ] **身分代入**：作者是否以「公會導師」的身分說話？讀者是否被稱為「冒險者」？（勇者是目標身分）。
-- [ ] **在地化用語 (Localization)**：是否使用了台灣常用的技術用語？（強制對照 [GLOSSARY.json](file:///Users/qiuliwen/Documents/%E5%B7%A5%E7%A8%8B%E5%B8%AB/project/JS-Core-Remaster/.agent/knowledge_base/GLOSSARY.json)）。
+- [ ] **在地化用語 (Localization)**：是否使用了台灣常用的技術用語？（強制對照 [.agent/knowledge_base/GLOSSARY.json](../../knowledge_base/GLOSSARY.json)）。
 - [ ] **禁忌檢查 (Framework Blacklist)**：除了「公會隱藏 Buff」區塊外，**絕對嚴禁**提到「React」、「Hooks」、「useState」、「Effect」等具體框架名稱。
-- [ ] **教學天數守衛 (Curriculum Guard)**：強制對照 `TODO.md` 與 `計劃書.md`，並嚴格遵守 [RFC-002：教學守衛協議](file:///Users/qiuliwen/Documents/%E5%B7%A5%E7%A8%8B%E5%B8%AB/project/JS-Core-Remaster/.agent/RFC/RFC-002.md)。嚴禁提到「目前天數 + 1」之後的所有語法或概念。
+- [ ] **教學天數守衛 (Curriculum Guard)**：強制對照 `TODO.md` 與 `計劃書.md`，並嚴格遵守 [.agent/RFC/RFC-002.md](../../RFC/RFC-002.md)。嚴禁提到「目前天數 + 1」之後的所有語法或概念。核心天數判定：D01-07(P1), D08-14(P2), D15-20(P3)。
+- [ ] **情境一致性檢測 (Contextual Consistency)**：全篇主題（如：史萊姆、勇者、寶箱）必須統一。演武場 (Dojo) 範例主題必須與公會佈告欄 (QuestBoard) 回報主題完全一致。
+- [ ] **靈魂發問檢測 (Spirit of Quests)**：QuestBoard 區塊嚴禁原文保留 `[...]` 佔位符。必須根據當天技術細節，客製化設計「初心者 (感性領悟)」與「冒險者 (理性挑戰)」的引導問題。
 
 ### 3. 技術與連結規格 (Technical Specifications)
 - [ ] **圖片連結檢測**：確認所有圖片是否皆已由 **外部圖床** 託管並提供有效連結。應避免使用本地相對路徑，以確保部落格發布後的穩定性。
@@ -31,3 +33,4 @@
    - ⚠️ **具體修正建議**：根據不符合清單提供改進方向。
    - 🔮 **伏筆校對**：確認是否正確處理了隱形伏筆。
 4. 若有嚴重偏離世界觀的地方，必須進行適度的「語氣修復」。
+5. **目錄守衛執行**：草稿應放置於 `_doc/drafts/` 根目錄（依導師 2026-03-20 指令），正式發布則依 `01-`, `02-`, `03-` 階段資料夾歸檔。

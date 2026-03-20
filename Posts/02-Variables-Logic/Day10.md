@@ -19,7 +19,7 @@
 > 
 > 當戰士穿上它時，它就變成紅色且聽從戰士命令；當法師穿上它時，它就轉為藍色且聽從法師調遣。最尷尬的是，如果這套盔甲被隨便丟在全域沒人穿，它就會預設聽從「公會長 (Window)」的命令。
 > 
-> 很多冒險者會被 `this` 搞瘋，是因為他們在找「這段扣在哪裡」，但其實你該找的是：**「現在是誰在用它？」**。
+> 很多冒險者會被 `this` 搞瘋，是因為他們在找「這段code在哪裡」，但其實你該找的是：**「現在是誰在用它？」**。
 
 ---
 
@@ -50,15 +50,91 @@
     magic.cast(); // 輸出：Window (繼承外層的 Window)
     ```
 
+#### 魔王的陷阱 —「回呼函式 (Callback)」中的 this
+這是開發中最常出錯的地方。當你把物件的方法當作參數傳遞時，它常會變回「簡易呼叫」。
+
+```JavaScript
+const mage = {
+  name: "辛梅爾",
+  greet() {
+    setTimeout(function() {
+      console.log(this.name); // 猜猜看是誰？
+    }, 100);
+  }
+};
+mage.greet(); // 輸出：undefined (或空字串)
+```
+- 原因：setTimeout 內部的匿名函式屬於「簡易呼叫」，其 `this` 指向 `Window`。
+- 解法：改用箭頭函式，因為箭頭函式會繼承 `greet()` 執行時的 `this`（即 `mage`）。
+
+#### 除了被動判定，我們也可以用「契約」強制指定主人
+#### 強制認主：bind / call / apply
+
+| 方法   | 特點                                   | 範例呼叫方式                          | 是否立即執行 |
+|--------|----------------------------------------|---------------------------------------|--------------|
+| call() | 立即執行，參數逐一傳入                 | `fn.call(obj, arg1, arg2)`            | ✅            |
+| apply()| 立即執行，參數以陣列形式傳入           | `fn.apply(obj, [arg1, arg2])`         | ✅            |
+| bind() | 回傳一個新的函式，綁定好 `this`，不執行 | `const newFn = fn.bind(obj)`          | ❌            |
+
+假設我們有一個通用的 attack 函式，以及兩位不同的戰士物件。
+
+```JavaScript
+// 通用的技能（咒語）
+function attack(skill, damage) {
+  console.log(`${this.name} 使用了 ${skill}，造成 ${damage} 點傷害！`);
+}
+
+// 兩位戰士（物件）
+const warriorA = { name: "艾冉" };
+const warriorB = { name: "休塔爾克" };
+```
+1. `call()`：點名立即發動
+`call` 會立即執行函式。第一個參數是 `this` 的對象，後面的參數則一個一個傳入。
+```JavaScript
+// 強制讓 attack 的 this 指向 warriorA
+attack.call(warriorA, "重擊", 50); 
+// 輸出：艾冉 使用了 重擊，造成 50 點傷害！
+```
+2. `apply()`：團體裝備發動
+`apply` 也會立即執行，唯一的差別是：除了第一個 `this` 對象外，後面的參數必須放在一個陣列 (`Array`) 裡面。
+```JavaScript
+// 適合當你的參數已經整理成一包陣列時
+const skills = ["旋風斬", 80];
+attack.apply(warriorB, skills); 
+// 輸出：休塔爾克 使用了 旋風斬，造成 80 點傷害！
+```
+3. `bind()`：簽訂專屬契約（不立即發動）
+`bind` 不會立即執行，它會回傳一個**「綁定好主人」的新函式**。這在處理非同步（如按鈕點擊、計時器）時最常用。
+```JavaScript
+// 為 warriorA 打造一個專屬的攻擊函式
+const allenAttack = attack.bind(warriorA, "法術反制", 100);
+
+// 之後在任何地方呼叫，主人永遠是 warriorA
+setTimeout(allenAttack, 1000); 
+// 1 秒後輸出：艾冉 使用了 法術反制，造成 100 點傷害！
+```
+
+#### 建構子判定 (`new` 關鍵字)
+在 JavaScript 中，還有一種優先權極高的判定方式：當使用 new 運算子時，this 會指向該次產生的「新物件實例」。
+
+```JavaScript
+function Hero(name) {
+  this.name = name;
+}
+const flamel = new Hero("弗拉梅爾"); 
+console.log(flamel.name); // 輸出：弗拉梅爾
+```
+#### 總結優先權順序（由高到低）：
+> 註：箭頭函式不參與此排序，它永遠看「宣告時的外層環境」。
+- `new` 關鍵字（新生的分身）
+- `bind` / `call` / `apply`（強制契約，注意 `bind` 為一次性綁定，後續無法再被變動）
+- 物件呼叫 `obj.fn()`（點前面的主人）
+- 簡易呼叫 `fn()`（預設領袖/undefined）
+
+
 > **導師的圖解心法：** 觀察圖中的盔甲。當盔甲是在 `warrior.attack()` 裡出現時，這件盔甲 (`this`) 就是 warrior；當它在全域環境直接被呼叫，它就變成了路人。
 
-![Day 10：this 指向判定圖](./images/Day10_logic_diagram.png)
-
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除)：
-1. **元素**：中間一套透明盔甲代表 `this`。左邊一個勇者容器 `Object`；右邊一個地球 `Window`。
-2. **顏色**：當指令來源標註 `.` (Dot)，連線到勇者，盔甲變藍 (#4DABF7)；當無連線，指引到地球，盔甲變灰。
-3. **佈局**：突顯「調用位置」決定「指向主人」的邏輯。
--->
+![Day 10：this 指向判定圖](https://i.meee.com.tw/WHFEtyZ.jpg)
 
 ---
 
@@ -100,7 +176,7 @@ talk(); // 輸出：🛡️ 勇者：辛梅爾 (門牌已鎖死！)
 ---
 
 #### ⚠️ 【實戰雷區：避開那些致命陷阱】
-> **1. 遺失的 Context**：當你寫 `addEventListener('click', obj.fn)` 時，`obj.fn` 就失去了它的物件，導致 `this` 亂跑。
+> **1. 遺失的 `Context`**：當你寫 `addEventListener('click', obj.fn)` 時，`obj.fn` 就失去了它的物件，導致 `this` 亂跑。
 > **2. 強奪主權法**：**`call`** 與 **`apply`** 可以立即發動咒語並指定主人。兩者的差別在於傳送物資（參數）的方式：`call` 是一個一個傳，`apply` 則是打包成陣列（Array）傳。
 
 ---
@@ -119,7 +195,7 @@ talk(); // 輸出：🛡️ 勇者：辛梅爾 (門牌已鎖死！)
 ---
 
 ## 🎯 【公會佈告欄：交付本日任務】
-[📜 本日實戰任務：變色龍盔甲判定實驗室 (CodePen)](在此插入網址)
+[📜 本日實戰任務：變色龍盔甲判定實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0a26-9ab3-747a-b6e8-c79c014cd865)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
