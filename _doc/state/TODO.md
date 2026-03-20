@@ -1,20 +1,26 @@
-# 📋 冒險公會：任務執行狀態看板 (TODO)
+# 🗺️ 冒險公會任務看板 (Phase 2)
 
 ## 🎯 當前賽段：第二階段 - 陣列、物件與邏輯控制 (Day 11 - 14)
 
-### 🗓️ 今日任務
-- [ ] Day 11 - 【類別 Class】幫程式碼穿上「制服」 @Writer
-- [ ] Day 11 - 產出 D11.js 演武場題目 (Class 實作) @Architect
+### 🚀 進行中 (In Progress)
+- [x] Day 11 - 產出 Day 11 文章草稿 (類別 Class) @Secretary
+- [x] Day 11 - 產出 D11.js 演武場題目 (Class 實作) @Architect
 
 ### 📝 待辦事項 (Backlog)
-- [ ] Day 12 - 【邏輯開關】&&、|| 與 ?? 的短路判斷
-- [ ] Day 13 - DOM 樹大探險：抓取網頁元素
-- [ ] Day 14 - 事件監聽：使用者點下去後發生了什麼？
+- [x] Day 11 - 【類別 Class】 (Draft: Day11.md)
+- [x] Day 12 - 【邏輯開關】 (Draft: Day12.md)
+- [x] Day 13 - 【DOM 標籤】 (Draft: Day13.md)
+- [x] Day 14 - 【事件監聽】 (Draft: Day14.md)
+- [x] Day 15 - 【事件委派】 (Draft: Day15.md)
 - [ ] **Day 18 預備**：【期中實戰】純 JS 打造任務佈告欄 (SoC 練習)
 
 ---
-*本看板由 Antigravity 自動維護，遵循 PDCA 循環。*
 
-### 🎨 施工紀錄與 Excalidraw 設計
-> **Day 11：類別 Class (Prototype)**
-> - **元素**：一個勇者模板 (Class)；下方工廠噴出一整排穿著相同藍色制服的法師 (Instances)；法師身後有一條透明的線連回模板 (Prototype Chain)。
+## 🏗️ 系統與安全 (System & Security)
+- [x] RFC-002: 教學守衛：天數邊界校驗 (Charter v2.2) 2026-03-20
+- [x] RFC-003: 特助自主進化：審核員 Skill 強化 2026-03-20
+
+## 🛡️ 公會成員狀態
+- **@Secretary**：草稿產出模式已標準化。
+- **@Architect**：Git 同步完成。
+- **@Reviewer**：Skill 已升級，具備靈魂檢測能力。
