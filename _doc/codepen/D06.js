@@ -24,7 +24,6 @@ const teamB = ["牧師", "弓箭手"];
 // const newScrolls = ...
 // const fullTeam = ...
 
-
 // ==========================================
 // 練習二：裝備進化（屬性覆蓋） (Object Spread & Overwrite)
 // ==========================================
@@ -33,20 +32,19 @@ const teamB = ["牧師", "弓箭手"];
    打造一件新裝備 `upgradedGear`。它必須繼承 `baseGear` 的所有屬性。
 
    任務規範：
-   1. 影印 `baseGear`。
-   2. 將 `level` 覆蓋改為 99。
-   3. 新增一個屬性 `weapon: "聖劍"`。
+   1.  影印 `baseGear`。
+   2.  將 `level` 覆蓋改為 99。
+   3.  新增一個屬性 `weapon: "聖劍"`。
    💡 提示：記得「後蓋前」的法則。
 */
 
 const baseGear = {
-    armor: "皮甲",
-    level: 1
+  armor: "皮甲",
+  level: 1,
 };
 
 // ✍️ 實作區：
 // const upgradedGear = ...
-
 
 // ==========================================
 // 練習三：後勤麻袋術 (Rest Parameters)
@@ -65,12 +63,11 @@ const baseGear = {
 
 // ✍️ 實作區：
 function collectLoot(playerName, ...others) {
-    // 在此撰寫印出邏輯
+  // 在此撰寫印出邏輯
 }
 
 // 測試呼叫：
 // collectLoot("辛梅爾", "金幣", "紅藥水", "地圖", "生鏽的鐵劍");
-
 
 // ==========================================
 // 練習四：精英挑戰 —— 影子的影子 (Deep Dive)
@@ -86,18 +83,25 @@ function collectLoot(playerName, ...others) {
 */
 
 const hero1 = {
-    name: "勇者",
-    bag: {
-        coin: 100
-    }
+  name: "勇者",
+  bag: { coin: 10 },
+  attack: () => {
+    console.log("發動攻擊！");
+  },
 };
 
-const hero2 = { ...hero1 }; 
+// 影印術實驗：
+const cloneShallow = { ...hero1 }; // 淺拷貝 (OK，共享內層)
+const cloneDeepJSON = JSON.parse(JSON.stringify(hero1)); // JSON 深拷貝 (OK，但魔法會遺失)
+
+// ⚡ 警告：如果下面這行解除註解，會導致次元崩潰 (DataCloneError)！
+// 因為 structuredClone 無法複製活著的函式。
+// const cloneStructured = structuredClone(hero1);
 
 // ✍️ 實作與實驗區：
-// hero2.bag.coin = 999;
-// console.log("hero1 的錢：", hero1.bag.coin);
-
+// 1.  修改 cloneShallow.bag.coin = 999; 觀察原件 hero1.bag.coin 是否跟著變？
+// 2.  嘗試執行 cloneDeepJSON.attack(); 觀察是否報錯？(提示：魔法消失了)
+// 3.  思考題：為什麼公會建議深拷貝時只處理「純物資 (Data)」，不處理「魔法招式 (Function)」？
 
 // ==========================================
 // 練習五：傳奇架構師 —— 龍之淚提取術 (Destructuring + Rest)
@@ -112,17 +116,21 @@ const hero2 = { ...hero1 };
    3. 將剩下的屬性全部裝進 `info` 物件。
 */
 
-const treasureChest = { 
-    id: 1, 
-    quality: "SSR", 
-    gold: 500, 
-    potion: 10 
+const treasureChest = {
+  id: 1,
+  quality: "SSR",
+  gold: 500,
+  potion: 10,
 };
 
 // ✍️ 實作區：
 // const { id, ...info } = treasureChest;
 
-
 // ==========================================
-// 演武場結束！恭喜你，離勇者辛梅爾與傳奇架構師的境界又更近了一步。
+// 🎯 任務鑑定提醒：
+// 演武結束！掌握了「影印術」與「麻袋術」後，你就能優雅地處理各式各樣的物資流了。
+//
+// 💡 請帶著你的 CodePen 網址回到 QuestBoard，並回填鑑定報告：
+// 1.  初心者：影印術掌握度 (成就感發掘)：今天成功使用 `...` 斷開影子分身的那一刻，你有沒有感受到數據終於「受你控制」的自由感？
+// 2.  冒險者：影印機的選擇 (理性挑戰)：如果我的物件屬性包含「魔法函式 (Function)」，為什麼 JSON 次元切割術會讓該魔法消失不見？
 // ==========================================

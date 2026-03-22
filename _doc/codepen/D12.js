@@ -12,16 +12,15 @@
 /* 💡 情境說明：
    公會的入口感應器會檢查冒險者的屬性。
    請在 Console 嘗試判斷以下變數是 Truthy 還是 Falsy：
-   1. const inventoryCount = 0;
-   2. const nickname = "";
-   3. const experience = NaN;
-   4. const guildCard = null;
-   5. const teamMembers = [];
+   1.  const inventoryCount = 0;
+   2.  const nickname = "";
+   3.  const experience = NaN;
+   4.  const guildCard = null;
+   5.  const teamMembers = [];
 */
 
 /* ✍️ 作答區 */
 // 請在此使用 Boolean() 或 !! 驗證上述屬性。
-
 
 // ==========================================
 // 練習2：防禦性備案 (?? vs ||)
@@ -30,9 +29,9 @@
 
 /* 💡 情境說明：
    怪物資料庫傳回了三隻不同狀態的史萊姆：
-   1. slimeA.atk = undefined (沒記錄到)
-   2. slimeB.atk = 0 (攻擊力真的是 0)
-   3. slimeC.atk = 20 (正常攻擊力)
+   1.  slimeA.atk = undefined (沒記錄到)
+   2.  slimeB.atk = 0 (攻擊力真的是 0)
+   3.  slimeC.atk = 20 (正常攻擊力)
    
    任務：請定義 fallbackAtk = 50。
    並分別對 A, B, C 用「最精準的方式 (??)」設定其最終攻擊力，
@@ -45,7 +44,6 @@
 // const finalAtk_B = ...
 // const finalAtk_C = ...
 
-
 // ==========================================
 // 練習3：通行許可 (&& 的連鎖判斷)
 // 任務：取代繁瑣的 if/else
@@ -53,21 +51,26 @@
 
 /* 💡 情境說明：
    冒險者必須同時滿足兩個條件，導師才會「顯示」通關訊息：
-   1. level >= 10
-   2. hasTicket === true
+   1.  level >= 10
+   2.  hasTicket === true
    
    任務：請不要使用 if 關鍵字，改用「短路運算子 (&&)」
    完成以下邏輯：當條件成立時，執行 showSuccessMessage()。
 */
 
-const showSuccessMessage = () => console.log('🛡️ 恭喜！你已獲得進入高階地圖的許可！');
+const showSuccessMessage = () =>
+  console.log("🛡️ 恭喜！你已獲得進入高階地圖的許可！");
 
 /* ✍️ 作答區 */
 // const level = 12;
 // const hasTicket = true;
 // (請在此用一列代碼完成判斷與執行)
 
-
-// 🚩 總結：
-// `&&` 給我看通行證，`||` 給我備胎，`??` 才是精準守衛。
-// 完成後，將你的邏輯修煉成果貼至 QuestBoard 吧！
+// ==========================================
+// 🎯 任務鑑定提醒：
+// 演武結束！`&&` 給我看通行證，`||` 給我備胎，`??` 才是精準守衛。利用 JS 的「懶惰」本質，寫出極簡且強健的代碼吧。
+//
+// 💡 請帶著你的 CodePen 網址回到 QuestBoard，並回填鑑定報告：
+// 1.  初心者：短路安全感鑑定 (成就感發掘)：今天第一次用 `??` 成功防禦住「無效攻擊 (null/undefined)」時，有沒有一種心靈安定的感覺？
+// 2.  冒險者：Falsy 的冤獄 (理性挑戰)：為什麼導師說數值 `0` 經常在 `||` 中被誤判？這在顯示「勇者剩餘血量」時會造成什麼慘劇？
+// ==========================================

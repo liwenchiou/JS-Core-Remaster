@@ -1,204 +1,159 @@
-# Day 13：DOM 樹大探險：如何精準抓取網頁裡的元素？
+# Day 13：原理篇 —— DOM 樹大探險：如何精準抓取網頁裡的元素？
 
 > **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
 
 ---
 
 ### **📜 這裡的修煉規則：**
-> **孩子，先別急著出發，既然來了就聽導師嘮叨幾句：**
-> 在接下來的 30 天裡，我每天都會在卷軸末尾為你準備一個 **「實戰演武場 CodePen」**。這裡沒有競爭，只有你在修煉場揮汗留下的痕跡。當你完成後，就帶著這份收穫回到公會的 **「QuestBoard 佈告欄」** 與夥伴們分享吧。
-> 記住，導師看重的從來不是完美的程式碼，而是你在那些挫折中，依然選擇握緊劍柄、再次嘗試的勇氣。
+
+> **孩子，在踏上今日的領地前，先坐下來喝杯酒吧。**
+> 修煉的路很長，別急著奔跑，先聽聽這份卷軸裡的古老叮嚀。
+>
+> 我在每一站的盡頭都為你鋪設了 **「`實戰演武場 CodePen`」**。那不只是程式碼的拼湊，而是你在這場暴風雨中，試圖用邏輯點燃的一顆星火。
+> 成功突圍後，別忘了帶著你的戰利品回到 **「`QuestBoard 佈告欄`」**。在那裡，你會發現自己從不孤單，公會的夥伴們都正舉杯等待你的歸來。
+>
+> 記住...
+>
+> 「 **導師看重的從來不是你的劍法有多華麗，而是當你被邏輯擊潰、滿身泥濘後，依然選擇握緊理性的劍柄，再次向真相發起衝鋒的勇氣。** 」
 
 ---
 
-## 🛡️ 【公會委託：尋標任務：誰在哪個位置？】
+## 🛡️ 【公會大廳：導師的修煉導讀】
 
-導師，我寫的 HTML 已經蓋好這座城市了，但我該怎麼抓到躲在城堡三樓的那個小怪物，叫他改名成『勇者之王』？
-導師揮揮手說：「冒險者，身為專業的尋寶人，你必須學會『座標精準定位』。這不是胡亂射箭，而是順著這棵名叫 `DOM` 的大樹，找到地圖上唯一的標記（`Selector`）。」
+「導師，我已經蓋好這座城市（HTML）了，但我該怎麼抓到躲在城堡三樓的那個小怪物，叫他改名成『勇者之王』？」
 
----
-
-## 💡 【導師講義：圖解底層真相】
-
-### 1. `HTML` 樹狀結構地圖 (The DOM Tree)
-網頁裡的所有標籤（`<div>`, `<p>`, `<h1>`），在 `JS` 的腦中其實都長得像一棵倒過來的「樹」。根部是 `document`，每條分枝都是一層巢狀關係。
-
-- **`document.querySelector()`**：最快導航，全圖只找「第一個」出現的目標。
-- **`document.querySelectorAll()`**：掃描全場，我全都要！
-
-### 2. `DOM` 樹：網頁的骨架
-當瀏覽器讀取 `HTML` 時，它會把每個標籤轉換成一個 節點 (`Node`)。
-這棵樹的結構決定了 `JS` 尋找元素的「路徑」。
-
-- 根節點 (`Root`)：`document` 是所有東西的起點。
-- 父子關係 (`Parent-Child`)：`<body>` 是 `<div>` 的父親；`<div>` 是 `<body>` 的孩子。
-- 兄弟關係 (`Siblings`)：同一個 `<div>` 下的 `<h1>` 與 `<p>` 互為兄弟。
-
-### 3. 定位術：`QuerySelector` 的導航邏輯
-這兩個方法就像是你在 `DOM` 迷宮中的「探測雷達」，它們使用的是與 `CSS` 選擇器 完全相同的語法：
-
-📍 `document.querySelector()`
-行為：從 `document` 開始向下掃描，一旦發現符合條件的「第一個」目標，就立刻停止搜尋並回傳。
-回傳值：一個 `Element` 物件（如果沒找到則回傳 `null`）。
-隱藏陷阱：如果你想改掉畫面上「所有」小怪的顏色，但只用了這個方法，結果只會有一隻小怪變色。
-
-📍 `document.querySelectorAll()`
-行為：掃描整棵樹，把所有符合條件的元素通通抓起來。
-回傳值：一個 `NodeList`（類陣列物件）。
-
-導師叮嚀：抓回來的是一疊清單，你不能直接對清單下命令（例如 list.style.color = 'red' 會失敗），你必須用 `forEach` 巡邏一遍，逐一對裡面的成員下令。
-
-### 📋 定位基準對照表
-
-| 選擇器類型 | 範例語法                          | 導師建議                                                   |
-|------------|-----------------------------------|------------------------------------------------------------|
-| ID (`#`)     | `querySelector('#login-btn')`     | 最快、唯一。用於表單送出、登入按鈕等不重複元件。           |
-| Class (`.`)  | `querySelectorAll('.card-item')`  | 最常用。用於列表、導覽列等具有相同樣式的群組。             |
-| 屬性 (`[]`)  | `querySelector('[data-id="123"]')`| 進階招式。在處理 API 資料或特定標記時非常好用。            |
-
-![原理邏輯圖](https://i.meee.com.tw/HzqPsSk.jpg)
-
-### 4. 讀心術：如何讀取元素內容與數值？
-抓到了元素，我們還需要能「讀取」它身上的資訊：
-
-- **`.textContent`**：用來讀取或改寫標籤內的文字（純文字）。
-- **`.value`**：**最關鍵！** 用來讀取輸入框 (`<input>`, `<select>`, `<textarea>`) 裡面當前填寫的數值。
-
-```JavaScript
-// 1. 讀取標題上的字
-const title = document.querySelector('h1').textContent;
-
-// 2. 讀取冒險者在輸入框打的名字
-const playerName = document.querySelector('#name-input').value;
-```
-
-#### 1. 元素內容與結構：`.innerHTML`
-用途：讀取或寫入標籤內部的「HTML 結構」。
-與 `textContent` 的差異：`textContent` 只看純文字；`innerHTML` 則會解析 `HTML` 標籤。
-```JavaScript
-const box = document.querySelector('.info-box');
-// 直接塞入一個帶有樣式的按鈕
-box.innerHTML = `<button class="btn-primary">點我領取獎勵</button>`;
-```
->⚠️ 導師警告： 處理使用者輸入的內容時，盡量避免使用 `innerHTML`，以防範 `XSS` 攻擊。
-
-#### 2. 標籤的身分證：`.getAttribute()` / `.setAttribute()`
-用途：讀取或修改 `HTML` 標籤上的任何屬性（如 `src`, `href`, `placeholder`, `disabled`）。
-```JavaScript
-const img = document.querySelector('#hero-avatar');
-// 更換圖片路徑
-img.setAttribute('src', 'new-boss.png'); 
-// 讀取目前的超連結
-const link = document.querySelector('a').getAttribute('href');
-```
-#### 3. 自定義數據：`.dataset` (最推薦的資料傳遞方式)
-用途：讀取 `HTML` 中以 `data-` 開頭的自定義屬性。這在處理列表、`ID` 或狀態（如血量、魔力）時非常優雅。
-
-```HTML
-<div class="monster" data-id="99" data-type="slime"></div>
-```
-```JavaScript
-const monster = document.querySelector('.monster');
-console.log(monster.dataset.id);   // 輸出 "99"
-console.log(monster.dataset.type); // 輸出 "slime"
-```
-#### 4. 樣式與類別：`.classList`
-用途：控制 `CSS Class`。比起直接改 `style` 屬性，透過切換 `Class` 來控制外觀更符合現代開發規範。
-
-常用方法：
-`.add()`：增加類別
-`.remove()`：移除類別
-`.toggle()`：切換類別（有就刪掉，沒有就補上）
-`.contains()`：檢查是否有某個類別
-
-```JavaScript
-const hero = document.querySelector('#player');
-hero.classList.add('is-active');    // 讓勇者發光
-hero.classList.toggle('is-dead');   // 切換死亡狀態
-```
-#### 📋 快速複習表
-
-| 屬性名稱       | 讀取對象          | 常用場景                                                   |
-|----------------|-------------------|------------------------------------------------------------|
-| .textContent   | 標籤內的純文字    | 修改標題、描述文字                                         |
-| .innerHTML     | 標籤內的 HTML     | 動態生成複雜的 HTML 結構（⚠️ 小心安全）                   |
-| .value         | 表單輸入內容      | 取得使用者在 Input 框打的字                                |
-| .classList     | CSS 類別清單      | 處理動畫、顯隱切換、樣式變更                               |
-| .dataset       | data-* 屬性       | 儲存與標籤關聯的後端 ID 或數值                             |
-| .src / .href   | 特定資源路徑      | 換圖、改連結                                               |
-
-
-
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除)：
-[元素：一棵倒過來的樹；根部標註 document；樹枝分叉到 <body>, 然後到 <section>；標註一個紅圈在 `#hero`節點；標註一圈藍圈在 `.monster` 節點。]
--->
+我指著遠方說：「冒險者，身為專業的尋寶人，你必須學會『座標精準定位』。這不是胡亂射箭，而是順著這棵名叫 `DOM (Document Object Model)` 的大樹，找到地圖上唯一的標記。如果你抓錯了人，你的咒語就會噴發出 `null` 的霧氣，讓你當場卡死在副本門口。」今天，我們要學會如何在萬千元素中，一眼釘住你的目標。
 
 ---
 
-## 🛖 【營火叮嚀：導師的經驗談】
-> 很多冒險者還在用舊時代的 `getElementById`、`getElementsByClassName`。聽導師一句勸，那些舊型號太囉嗦了。現代公會標準是 `querySelector`。它就像萬能定位儀，只要你懂一點 CSS 選擇器的邏輯，全場沒有你抓不到的目標。
+## 💡 【導師講義：底層真相探究】
+
+### 1. HTML 樹狀結構地圖 (The DOM Tree)
+
+網頁裡的所有標籤（`<div>`, `<p>`, `<h1>`），在 JavaScript 的眼中其實都長得像一棵倒過來的「樹」。根部是 `document`，每條分枝都是一層巢狀關係。
+
+#### 🛠️ 定位術：QuerySelector 兩大傳送門
+
+1.  **`document.querySelector()`：單點偵錯儀**
+    行為：從起點向下掃描，一旦發現「第一個」符合條件的目標，就立刻停止並回傳。
+    回傳值：一個活生生的 **Element** 物件（沒找到則回傳 `null`）。
+2.  **`document.querySelectorAll()`：全場掃描儀**
+    行為：掃描整棵樹，把所有符合條件的人通通抓起來。
+    回傳值：一個 **NodeList**（類陣列清單）。你必須用 `forEach` 巡邏一遍，才能對裡面的成員逐一下令。
+
+### 2. 定位基準對照表
+
+| 選擇器類型      | 範例語法                     | 導師建議                               |
+| :-------------- | :--------------------------- | :------------------------------------- |
+| **ID (`#`)**    | `querySelector('#login')`    | 最快、唯一。用於核心標靶（如登入鈕）。 |
+| **Class (`.`)** | `querySelectorAll('.card')`  | 最常用。用於批量樣式的群組。           |
+| **屬性 (`[]`)** | `querySelector('[data-id]')` | 進階招式。處理複雜資料關聯時非常好用。 |
 
 ---
 
-## ⚔️ 【演武場：從冒險者到勇者辛梅爾】
+## ⚔️ 【戰術對抗：學長與學弟的代碼對決】
 
-### 招式示範：抓取與改寫內容
-[展示「傳統手動（Before）」與「現代定位（After）」的對比。]
+### 招式示範：精準定位術
 
-#### ❌ 冒險者：用舊型號定位
+#### ❌ 冒險學弟：使用舊型號羅盤 (getElementById)
+
+- **負能量評級**：🔴 語法冗長 / 🔴 彈性極低
+
 ```javascript
-const name = document.getElementById('nickname');
-const lists = document.getElementsByClassName('item');
-// 囉嗦、難記，且 lists 不是現代陣列
+const name = document.getElementById("nickname");
+// 囉嗦、難記，且無法使用複雜選取器
 ```
 
-#### ✅ 勇者辛梅爾：精準單向與集合定位
+#### ✅ 勇者學長：全能的高效定位 (querySelector)
+
+- **利潤評級**：🟢 統一語法 / 🟢 支援 CSS 複雜選取
+
 ```javascript
 // 1. 抓取唯一目標 (ID 用 #)
-const heroName = document.querySelector('#nickname');
-heroName.textContent = '辛梅爾';
+const heroName = document.querySelector("#nickname");
+heroName.textContent = "辛梅爾";
 
-// 2. 抓取一組目標 (Class 用 .)
-const monsters = document.querySelectorAll('.item');
-monsters.forEach(m => m.style.color = 'red');
+// 2. 抓取一群目標 (Class 用 .) 並批量處理
+const monsters = document.querySelectorAll(".monster");
+monsters.forEach((m) => m.classList.add("is-hidden"));
 ```
 
-> **導師講評：** 你看，`querySelector` 的彈性在於你可以寫出複雜的 CSS 選擇器，像是 `section .active p`。只要選對了地方，改內容、改樣式，都只是彈指之間的事。
+---
 
-#### ⚠️ 【實戰雷區：它是 Array 嗎？】
-> 當你用 `querySelectorAll` 抓回一群小怪時，它回傳的是 `NodeList`。它雖然長得像陣列，具備 `forEach`，但早期有些舊型號（IE/Edge）不支援它使用 `map` 或 `filter`。如果你需要更強的過濾，建議在前面加 `[...]` 把它展開成正港陣列！
+### 3. 邏輯流向圖解
+
+> **導師的圖解心法：** DOM 樹就像是一座 **「地下城的每一層地圖」**。`querySelector` 就是你的精準掃描儀。你可以從最上面的 `#castle` 一層層往下掃描，直到你鎖定那個帶著寶貝的 `.monster`。
+
+<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
+忘掉你前面產出的圖，按照我以下的提示詞重新產生，這是一個公會導師正在教導新手冒險者的畫面：
+
+【核心圖解重點】：
+「DOM 樹地圖 (DOM Tree)：一個倒置的樹狀結構，頂端是 Document 物件。分支出複數個 Div 與 Section 節點。畫面中心具備一個發光的放大鏡 (querySelector)，正在精準鎖定其中一顆藍色節點，並顯示其座標路徑。」
+
+【視覺場景】：
+畫面呈現公會導師正手持發光的定位儀，在一棵懸浮的數位發光樹前向新手解釋如何「順藤摸瓜」找到目標。背景是深邃的公會圖書館。
+強調：導師的表情是「引領新手看見真相」的溫柔與自信。
+
+【視覺規範】：
+- 風格：Excalidraw 手繪感。
+- 配色守護：藍色 #4DABF7 (結構樹框架)、黃色 #FFD43B (掃描路徑/定位點)。
+-->
+
+![DOM樹導航圖](https://i.meee.com.tw/y1RS2ql.jpg)
 
 ---
 
 ## 🏰 【勇者精英課：邁向職人的進階架構】
-在大型專案與現代 `UI` 元件系統中，我們很少直接操作 `DOM`。但在處理特定的元件底層、直接存取元素引用（`Element Reference`）或是一些老舊系統維護時，精準的 `DOM` 定位依然是不可或缺的「偵查術」。理解 `DOM Node` 與 `Element` 的區別，是你進化為高階冒險者的必經之路。
 
-- `NodeList` 是一組只能看、不能改裝的展示櫃；而 `Array` 則是功能齊全的工具箱。
-- `NodeList`：只提供基本的 `length` 屬性和 `forEach` 方法。
-- `Array`：擁有 `map` (轉換資料)、`filter` (篩選資料)、`reduce` (累加資料) 等強大武器。
+### .dataset：標籤隱藏的公事包
+
+抓到了元素，我們還需要能讀取它身上的隱藏資訊。
+職人們最推薦使用 `data-*` 屬性來儲存與 HTML 標籤關聯的資料（例如資料庫 ID）。
+
+```html
+<div class="npc" data-id="99" data-job="mentor"></div>
+```
+
+```javascript
+const npc = document.querySelector(".npc");
+console.log(npc.dataset.id); // "99"
+```
+
+這比直接把 ID 寫在 Class 裡乾淨得多，也更符合現代資料與邏輯分離的架構。
 
 ---
+
+## 🛖 【營火叮嚀：導師的經驗談】
+
+> 孩子，現代公會的標配是 **`querySelector`**。它就像萬能定位儀，只要你懂一點 CSS 選擇器的邏輯，全場沒有你抓不到的標靶。學會這招，你就拿到了參與「DOM 實戰」的入場券。
+
+---
+
+**天色微亮，營火雖已燃盡，但你眼中卻閃爍著領悟的光芒。在前往演武場挑戰關卡前，我已經幫你把靈魂碎片精煉成了這份「戰術錦囊」。拿好它，今日的任務不再是負擔，而是你證明自我的舞台。去吧，公會的英雄榜在等著你的戰報。**
 
 ## 📝 【夥伴筆記：今日修煉精華】
-##### *這份筆記是你的隨身護身符，卡關時看一眼，真相就在裡面。*
-- **querySelector**：抓第一張寶藏圖。
-- **querySelectorAll**：抓整區寶藏圖 (NodeList)。
-- **textContent**：修改 NPC 的台詞。
-- **value**：獲取輸入框裡的機密情報 (玩家輸入的值)。
+
+##### _這份筆記是你的隨身護身符，卡關時看一眼，真相就在裡面。_
+
+- **querySelector**：抓第一個目標。
+- **querySelectorAll**：擴散掃描，帶回一疊 NodeList。
+- **textContent**：操作標籤台詞。
+- **value**：獲取輸入框裡的機密數值。
 
 ---
 
-## 🎯 【公會佈告欄：交付本日任務】
-[📜 本日實戰任務：尋找迷路的小怪 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0bc6-2634-7689-a9f2-ede41e27097b)
-[🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+## 🎯 【實戰演武場】
 
-### **⚔️ 任務鑑定條件：**
-> 1. 完成 CodePen 中題目挑戰。
-> 2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
->    - **初心者**：當你順著 DOM 樹那條看不見的神經線，精準抓到指定 NPC (元素) 並修改他的台詞時，你是否感受到自己正在介入瀏覽器「靈魂圖層」的掌控權？
->    - **冒險者**：當你用 `querySelectorAll` 抓回一群小怪時，如果你要對他們進行批量「過濾」或「變換」，為何將其展開為真實陣列 `Array` 會是更具權威且安全的作法？ —— *任務完成後，你的名字將永遠標記在公會的英雄榜上！*
+1.  [📜 本日實戰任務：DOM 樹的精準抓取術 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0bc6-2634-7689-a9f2-ede41e27097b)
+2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+    - **初心者：捕獲 NPC 鑑定 (成就感發掘)**：
+      - 1.  今天第一次在 Consle 中成功印出瀏覽器上的標題時，有沒有一種「代碼終於與世界連接」的感覺？
+    - **冒險者：名單與陣列之謎 (理性挑戰)**：**[⚡ 觀念辨析]**
+      - 1.  `NodeList` 雖然長得像陣列，但它能直接施展 `map` 加工術嗎？
+3.  任務完成後，你的名字將永遠標記在公會的英雄榜上！
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-- **MDN 官方文獻：** [Document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+- **MDN 官方文獻：** [Document.querySelector() 詳解](https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelector)

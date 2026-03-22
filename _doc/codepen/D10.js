@@ -23,10 +23,9 @@ const warriorA = { name: "艾冉", execute: showOwner };
 const warriorB = { name: "辛梅爾", execute: showOwner };
 
 /* ✍️ 作答區 */
-// 1. 請執行 warriorA 的 execute 技能：
+// 1.  請執行 warriorA 的 execute 技能：
 
-// 2. 請執行 warriorB 的 execute 技能：
-
+// 2.  請執行 warriorB 的 execute 技能：
 
 // ==========================================
 // 練習二：遺失的門牌號碼 (Lost Context)
@@ -38,15 +37,16 @@ const warriorB = { name: "辛梅爾", execute: showOwner };
 
 const trainee = {
   name: "休塔爾克",
-  shout() { console.log(`💥 少年戰士的咆哮：${this.name}`); }
+  shout() {
+    console.log(`💥 少年戰士的咆哮：${this.name}`);
+  },
 };
 
 /* ✍️ 作答區 */
-// 1. 請在此將 trainee.shout 綁定 (bind) 給 trainee，並存入 storedAction 中：
-let storedAction; 
+// 1.  請在此將 trainee.shout 綁定 (bind) 給 trainee，並存入 storedAction 中：
+let storedAction;
 
-// 2. 執行 storedAction()：
-
+// 2.  執行 storedAction()：
 
 // ==========================================
 // 練習三：超時的盔甲 (setTimeout this)
@@ -60,17 +60,16 @@ const mage = {
   name: "弗拉梅爾",
   cast() {
     console.log(`✨ 開始吟唱：${this.name}`);
-    setTimeout(function() {
+    setTimeout(function () {
       // ⚠️ 這裡的 this 在 1 秒後會指向路人 (Window)
       console.log(`🔮 魔法增益：${this.name} 魔法增強 20%`);
     }, 1000);
-  }
+  },
 };
 
 /* ✍️ 作答區 */
 // 修改下方區塊，讓 setTimeout 內部的 this 能正確指向 mage
-// 執行測試：mage.cast(); 
-
+// 執行測試：mage.cast();
 
 // ==========================================
 // 練習四：召喚術與契約 (call / apply)
@@ -80,24 +79,25 @@ const mage = {
 */
 
 function supportAttack(skill, damage) {
-  console.log(`🏹 ${this.name} 請求支援！發動 ${skill}，造成 ${damage} 點傷害！`);
+  console.log(
+    `🏹 ${this.name} 請求支援！發動 ${skill}，造成 ${damage} 點傷害！`,
+  );
 }
 
 const adventurer = { name: "勇者修道生" };
 
 /* ✍️ 作答區 */
-// 1. 使用 call()：強制讓 supportAttack 的主人變成 adventurer，
-//    技能名稱傳入 "火球術"，傷害 100：
+// 1.  使用 call()：強制讓 supportAttack 的主人變成 adventurer，
+//     技能名稱傳入 "火球術"，傷害 100：
 
-
-// 2. 使用 apply()：強制讓 supportAttack 的主人變成 adventurer，
-//    技能與傷害打包成陣列 ["雷擊", 150] 傳入：
-
+// 2.  使用 apply()：強制讓 supportAttack 的主人變成 adventurer，
+//     技能與傷害打包成陣列 ["雷擊", 150] 傳入：
 
 // ==========================================
-/* 📜 結語：
-  幹得好，冒險者！你已經成功掌握了「變色龍盔甲」的操作精髓。
-  記住：決定 this 指向的不是「這段程式碼寫在哪」，而是「誰發動了它」。
-  
-  完成後，歡迎將 CodePen 網址回傳至 QuestBoard 佈告欄領取本日功勳！
-*/
+// 🎯 任務鑑定提醒：
+// 演武結束！你已經成功掌握了「變色龍盔甲」的操作精髓。記住：決定 this 指向的不是「這段程式碼寫在哪」，而是「誰發動了它」。
+//
+// 💡 請帶著你的 CodePen 網址回到 QuestBoard，並回填鑑定報告：
+// 1.  初心者：變色龍盔甲鑑定 (成就感發掘)：今天第一次親眼看到 `this` 指向隨玩家不同而改變時，有沒有感受到一種「看穿代碼真實靈魂」的感覺？
+// 2.  冒險者：靈魂鎖定之術 (理性挑戰)：bind、call、apply 同樣都能修正 this 的指向，但它們發動時機最大的不同是什麼？
+// ==========================================
