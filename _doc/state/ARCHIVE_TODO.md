@@ -30,4 +30,21 @@
 > - **元素**：中間一套透明盔甲標記 `this`；左邊一個勇者標記 `Object`；右邊一個地球標記 `Global`。
 
 ---
-*歸檔時間：2026-03-20 | 公會特助 @Secretary*
+
+## 🎯 第三、四階段：瀏覽器交互與外部連線 (Day 11 - 25) - [COMPLETED]
+
+### ✅ 已完結任務
+- [x] Day 11 - 15 ... 二、三階段交接任務全數達成 ✅
+- [x] Day 16 - 17 ... LocalStorage 與計時器實作 ✅
+- [x] Day 18 - 20 ... 期中實戰、Event Loop 與 Promise ✅
+- [x] Day 21 - 25 ... 第四階段：與外部世界的連結 完結 🏆
+
+### 🎨 第三、四階段 Excalidraw 原理圖存檔
+> **Day 19：Event Loop (Vending Machine)**
+> - **元素**：單一櫃檯辦事員 (Call Stack)；一台自動販賣機 (Web APIs)；一條排隊長龍 (Task Queue)。
+> 
+> **Day 25：氣象觀測站架構**
+> - **元素**：觀測站 UI；Async/Await 齒輪；雲端 API Server；JSON 資料包。
+
+---
+*歸檔時間：2026-05-07 | 公會特助 @Secretary*

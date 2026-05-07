@@ -1,0 +1,160 @@
+/* 🏰 Day 22：Fetch API 實戰風格 */
+
+:root {
+  --guild-gold: #ffd43b;
+  --guild-blue: #4dabf7;
+  --guild-dark: #212529;
+  --guild-bg: #f8f9fa;
+  --danger-red: #fa5252;
+  --success-green: #51cf66;
+}
+
+body {
+  background-color: var(--guild-bg);
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.guild-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  border-top: 8px solid var(--guild-blue);
+}
+
+.guild-title {
+  font-size: 1.8rem;
+  color: var(--guild-dark);
+  margin-bottom: 0.5rem;
+}
+
+.guild-subtitle {
+  color: #868e96;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* 任務卡片樣式 */
+.quest-card {
+  background: #f1f3f5;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-card:not(.hidden) {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.quest-badge {
+  background: var(--guild-gold);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.quest-content {
+  font-size: 1.25rem;
+  color: var(--guild-dark);
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+
+/* 狀態標籤 */
+.status-tag {
+  font-size: 0.75rem;
+  color: var(--success-green);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* 載入動畫 */
+.spinner {
+  margin: 2rem 0;
+}
+
+.bird-icon {
+  font-size: 2.5rem;
+  animation: fly 1.5s infinite ease-in-out;
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
+
+/* 錯誤處理 */
+.error-box {
+  background: #fff5f5;
+  color: var(--danger-red);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ffa8a8;
+  margin-bottom: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 按鈕風格 */
+.guild-btn {
+  background-color: var(--guild-blue);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.guild-btn:hover {
+  background-color: #339af0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(77, 171, 247, 0.4);
+}
+
+.guild-btn:active {
+  transform: translateY(0);
+}

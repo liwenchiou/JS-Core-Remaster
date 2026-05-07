@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 22：跨國物資搬運實作</title>
+</head>
+
+<body>
+    <div class="guild-container">
+        <header>
+            <h1 class="guild-title">🏰 公會物資接收處</h1>
+            <p class="guild-subtitle">正在等待遠方王國的連線...</p>
+        </header>
+
+        <main class="quest-board">
+            <div id="quest-card" class="quest-card hidden">
+                <div class="card-header">
+                    <span class="quest-badge">📜 傳奇任務</span>
+                    <span id="quest-id" class="quest-number">#00</span>
+                </div>
+                <h2 id="quest-title" class="quest-content">載入中...</h2>
+                <div class="card-footer">
+                    <span class="status-tag">成功接收</span>
+                </div>
+            </div>
+
+            <div id="loading-spinner" class="spinner">
+                <div class="bird-icon">🕊️</div>
+                <p>信鴿飛行中...</p>
+            </div>
+
+            <div id="error-message" class="error-box hidden">
+                <p>🌋 糟了！信鴿被巨龍攔截了...</p>
+                <small id="error-detail"></small>
+            </div>
+        </main>
+
+        <button id="fetch-btn" class="guild-btn">再次派遣信鴿</button>
+    </div>
+</body>
+
+</html>

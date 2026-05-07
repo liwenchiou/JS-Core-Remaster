@@ -1,0 +1,37 @@
+<!-- 🛡️ Day 27：資料驅動演武場 🛡️ -->
+<link rel="stylesheet" href="style.css">
+<div class="container">
+  <h1>Day 27：指揮官的名冊管理</h1>
+  <p>💡 記住：不要直接動 DOM，請透過修改 `state` 來改變畫面！</p>
+  
+  <div class="actions">
+    <input type="text" id="newName" placeholder="隊員姓名">
+    <select id="newJob">
+      <option value="戰士">戰士</option>
+      <option value="法師">法師</option>
+      <option value="僧侶">僧侶</option>
+    </select>
+    <button onclick="handleAddClick()">🏹 招募隊員</button>
+  </div>
+
+  <hr>
+
+  <div id="memberList">
+    <!-- 這裡會由 Render 函式自動投影 -->
+  </div>
+</div>
+
+<script>
+  // 輔助函式：接手 HTML 與 JS 的橋樑
+  function handleAddClick() {
+    const name = document.getElementById('newName').value;
+    const job = document.getElementById('newJob').value;
+    if (name) {
+      addMember(name, job);
+      document.getElementById('newName').value = '';
+    }
+  }
+</script>
+
+<!-- 💡 連結指揮官邏輯 -->
+<script src="D27.js"></script>

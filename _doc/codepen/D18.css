@@ -1,0 +1,96 @@
+/* 🎨 Day 18：佈告欄專用風格 */
+:root {
+  --guild-bg: #2d2d2d;
+  --guild-yellow: #ffd43b;
+  --guild-blue: #4dabf7;
+  --guild-red: #fa5252;
+  --guild-text: #f8f9fa;
+}
+
+.quest-board {
+  background: var(--guild-bg);
+  color: var(--guild-text);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: "Inter", sans-serif;
+  border: 2px solid var(--guild-yellow);
+}
+
+header h1 {
+  color: var(--guild-yellow);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  text-align: center;
+  color: #adb5bd;
+  font-size: 0.9rem;
+}
+
+.quest-input-area {
+  display: flex;
+  gap: 10px;
+  margin: 2rem 0;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #495057;
+  background: #1a1a1a;
+  color: white;
+}
+
+button#add-btn {
+  padding: 12px 20px;
+  background: var(--guild-yellow);
+  color: #1a1a1a;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #3d3d3d;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-left: 5px solid var(--guild-blue);
+  transition: 0.3s;
+}
+
+li.done {
+  opacity: 0.6;
+  border-left-color: #69db7c;
+  text-decoration: line-through;
+}
+
+li button {
+  background: var(--guild-red);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #868e96;
+}

@@ -1,0 +1,35 @@
+<!-- 🏆 Day 28：聖劍鑑定大會 🏆 -->
+<link rel="stylesheet" href="style.css">
+<div class="container">
+  <h1>Day 28：從 JS 靈魂看穿 React 聖劍</h1>
+  <p>這是我們 30 天修煉的真相揭曉時刻。請觀察下方兩邊的運作方式。</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>📜 卷軸 A：純 JS 版</h3>
+      <div id="vanilla-root">
+        <!-- 💡 舊時代：我們先在 HTML 寫好標籤，再用 JS 去抓它 -->
+        <button id="vanilla-btn">點擊次數：0</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📜 卷軸 B：React 聖劍版</h3>
+      <!-- 💡 新時代：HTML 只是個空的掛載點 (Root) -->
+      <div id="react-root"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 💡 為了讓 React 能跑，我們引入了聖劍零件 -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- 💡 連結聖劍核心邏輯 -->
+<script type="text/babel" src="D28.js"></script>
+
+<script type="text/babel">
+  // 💡 在 CodePen 中，我們會在這裡掛載 ReactCounter
+  ReactDOM.createRoot(document.getElementById('react-root')).render(<ReactCounter />);
+</script>

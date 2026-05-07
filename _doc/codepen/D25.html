@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 25：異世界氣象觀測站</title>
+</head>
+
+<body>
+    <div class="weather-shield">
+        <header>
+            <h1>⚔️ 異世界氣象觀測站</h1>
+            <p>輸入領地名稱，探測即時天候</p>
+        </header>
+
+        <section class="search-box">
+            <input type="text" id="cityInput" placeholder="例如：Taipei, Tokyo, London...">
+            <button id="searchBtn">探測脈動</button>
+        </section>
+
+        <!-- 載入中狀態 -->
+        <div id="loading" class="status-msg hidden">⏳ 正在觀測星象...</div>
+
+        <!-- 錯誤訊息 -->
+        <div id="errorMessage" class="status-msg error hidden">📢 警告：該領地暫時無法連線</div>
+
+        <!-- 天氣顯示面板 -->
+        <main id="weatherInfo" class="weather-card hidden">
+            <div class="main-info">
+                <h2 id="cityName">---</h2>
+                <div class="temp-box">
+                    <span id="temperature">--</span>°C
+                </div>
+                <p id="description">---</p>
+            </div>
+            <div class="details">
+                <div class="detail-item">
+                    <span>💧 濕度</span>
+                    <span id="humidity">--</span>%
+                </div>
+                <div class="detail-item">
+                    <span>🌬️ 風速</span>
+                    <span id="windSpeed">--</span> m/s
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 💡 導師建議：此處引入 CSS 與 JS -->
+</body>
+
+</html>
