@@ -1,6 +1,6 @@
 # Day 18：【期中實戰】純 JS 打造你的第一個「任務佈告欄」
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 

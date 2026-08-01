@@ -1,6 +1,6 @@
 # Day 26：【效能神兵】防抖 (Debounce) 與節流 (Throttle) 的冷卻機制
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 

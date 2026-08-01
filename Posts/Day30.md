@@ -1,6 +1,6 @@
 # Day 30：【終章】慶功宴與新地圖：你的 JS 重塑之旅才正要開始
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 

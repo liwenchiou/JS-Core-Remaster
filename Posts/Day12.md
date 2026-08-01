@@ -1,6 +1,6 @@
 # Day 12：原理篇 —— 【邏輯開關】&&、|| 與 ?? 的短路判斷：老手最愛用的簡潔語法
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 

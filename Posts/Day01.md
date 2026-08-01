@@ -1,6 +1,6 @@
 # Day 01：看見世界的儀式：控制台與冒險者的第一眼
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 

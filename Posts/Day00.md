@@ -1,6 +1,6 @@
 # Day 00：【前導序幕】敲響冒險大門：30 天 JS 核心重構與轉職協議
 
-> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://liwenchiou.github.io/liwenblog/#intro)**
+> **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
 
@@ -51,6 +51,14 @@
 - 🪴 **導師的數位花園（Digital Garden）**
   長期沉澱與知識檢索的基地：[Liwen's Digital Garden](https://garden.liwen.studio/)。
 
+### 2. 公會修煉身份與階級指南
+
+為了讓每位勇者都能找到最適合自己的修煉節奏與挑戰目標，公會將夥伴分為不同身份：
+
+- 🐣 **初心者 (Novice)**：代表正在練習與接觸 JavaScript 基礎語法的新手朋友。重點在於發掘手寫代碼的成就感，建立基礎邏輯與信心。
+- ⚔️ **冒險者 (Adventurer)**：代表已經使用 JS 開發過一段時間、想打破「似懂非懂」瓶頸，進一步看清底層原理、記憶體機制與架構思維的進階學習者。
+- 🛡️ **傳奇導師 (Mentor Liwen)**：陪伴大家拆解原理、提供除錯指引，並在背後守護大家修煉路途的公會導師。
+
 ---
 
 ## 🛖 【營火叮嚀：導師的經驗談】
@@ -70,6 +78,7 @@
 
 - **[我們在做什麼]**：發起 30 天 JS 核心重構計畫，透過去術語與視覺化圖解，帶大家看透底層真相並銜接 React。
 - **[這個專案有什麼]**：前導體驗網頁 (loadPage) + 30 天圖解任務書 (Posts) + CodePen 演武場 + QuestBoard 酒館簽到系統。
+- **[修煉身份]**：**初心者**（正在練習 JS 基礎、發掘成就感）與 **冒險者**（使用過一段時間、挑戰理性深入底層原理）。
 - **[黃金三步 SOP]**：每日閱讀任務書 ➔ CodePen 手寫實戰 ➔ QuestBoard 酒館交流戰報。
 
 ---
