@@ -146,7 +146,7 @@ const search = debounce(fetchData, 300);
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務題目 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0258-e784-700e-9d0e-5145562c1fee)
+1.  [📜 本日實戰任務：冷卻大師與防抖節流實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0258-e784-700e-9d0e-5145562c1fee)
 2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：冷卻大師 (成就感發掘)**：
       - 1. 能成功防止按鈕連點導致的重複 Log 嗎？

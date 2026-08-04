@@ -146,7 +146,7 @@ function takeDamage(amount) {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務題目 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0262-a5be-7489-9bfa-5ad29caff8d6)
+1.  [📜 本日實戰任務：資料驅動與狀態指揮實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0262-a5be-7489-bfa5-5ad29caff8d6)
 2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：指揮官啟蒙 (成就感發掘)**：
       - 1. 你能成功透過修改 `state` 陣列，讓畫面自動多出一隻史萊姆嗎？

@@ -156,12 +156,12 @@ if (true) {
 
 ## 🎯 【實戰演武場】
 
-[📜 本日實戰任務：標籤貼紙與型別鑑定 (CodePen)](https://codepen.io/liwenchiou/pen/D02-Variables)
+[📜 本日實戰任務：清點魔法物資 —— 變數宣告與作用域的生存法則 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019ced31-0e0e-7320-b2bc-46b3b4983a44)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
 
-1.  [📜 本日實戰任務：標籤貼紙與型別鑑定 (CodePen)](https://codepen.io/liwenchiou/pen/D02-Variables)
+1.  [📜 本日實戰任務：清點魔法物資 —— 變數宣告與作用域的生存法則 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019ced31-0e0e-7320-b2bc-46b3b4983a44)
 2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：物資守衛鑑定 (成就感發掘)**：
       - 1.今天成功使用 `const` 焊死物資時，有沒有一種「代碼變得很可靠」的安全感？
