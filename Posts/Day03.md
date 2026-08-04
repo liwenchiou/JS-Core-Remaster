@@ -47,11 +47,13 @@
 
 - **箭頭函式 (Arrow Function)**：
   現代職人的標配。像一支箭一樣，前端是接收物資（參數），後端是指向動作。
-  `javascript
-const quickAttack = (power) => {
-  return power * 2;
-};
-`
+
+  ```javascript
+  const quickAttack = (power) => {
+    return power * 2;
+  };
+  ```
+
   > **🏹 導師的吟唱簡化三步驟：**
   >
   > 1. **移除關鍵字**：將笨重的 `function` 關鍵字扔掉。
@@ -80,7 +82,7 @@ console.log(superQuickAttack(100)); // 200
 
 ### 3. 邏輯流向圖解
 
-> **導師的圖解心法：** 觀察這個魔力的演進過程。傳統 `function` 就像一座 **「沉重的老式加工廠」**，需要繁雜的齒輪與排煙（關鍵字與大括號）；而箭頭函式則將這切精煉為一支 **「發光的光矢 (=>)」**，數據從箭頭後端進入，順著指向瞬間轉化為發光的成品噴射而出。
+> **導師的圖解心法：** 觀察這個魔力的演進過程。傳統 `function` 就像一座 **「沉重的老式加工廠」**，需要繁雜的齒輪與排煙（關鍵字與大括號）；而箭頭函式則將這一切精煉為一支 **「發光的光矢 (=>)」**，數據從箭頭後端進入，順著指向瞬間轉化為發光的成品噴射而出。
 
 <!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
 忘掉你前面產出的圖，按照我以下的提示詞重新產生，這是一個公會導師正在教導新手冒險者的畫面：
@@ -141,7 +143,36 @@ const getHeroInfo = (name) => ({
 箭頭函式除了酷炫，還有一種「不忘本」的美德。
 在傳統函式中，當你使用定時器或非同步召喚時，內部的 `this` 指標常會迷路，像一隻找不到主人的流浪狗。
 
-但箭頭函式 **「沒有自已的 `this`」**。它會永遠看著外層定義它的那個環境（這就是 **Lexical Scope**）。這在未來處理複雜的互動事件時，能保證你施展的咒語永遠抓到正確的冒險者本人，而不是迷失在全域的海域中。
+但箭頭函式 **「沒有自己的 `this`」**。它會永遠看著外層定義它的那個環境（這就是 **Lexical Scope**）。這在未來處理複雜的互動事件時，能保證你施展的咒語永遠抓到正確的冒險者本人，而不是迷失在全域的海域中。
+
+我們用一個「延遲 1 秒施放魔法」的定時器（`setTimeout`）來觀察主人的流失與守護：
+
+```javascript
+// ❌ 傳統 function：定時器發動時，this 會迷路（找不到主人）
+const mage = {
+  name: "芙莉蓮",
+  castSpell: function () {
+    setTimeout(function () {
+      // 這裡的 function 有自己的 this，但它已經迷失在全域了
+      console.log(this.name + " 施放了魔法！"); // ❌ 輸出：undefined 施放了魔法！
+    }, 1000);
+  },
+};
+
+// ✅ 箭頭函式 (=>)：永遠記得外層的主人（繼承 mage 的 this）
+const archmage = {
+  name: "芙莉蓮",
+  castSpell: function () {
+    setTimeout(() => {
+      // 箭頭函式沒有自己的 this，會看著外層 castSpell 的環境，精準抓到 archmage！
+      console.log(this.name + " 施放了魔法！"); // ✅ 輸出：芙莉蓮 施放了魔法！
+    }, 1000);
+  },
+};
+```
+
+> **💡 導師領路人預告：**
+> 你現在只需要先記住一個直覺 —— **「箭頭函式很乖，不會搞丟外層的主人 (`this`)」**。至於 `this` 到底為什麼會在傳統函式裡迷路？這個魔王關卡我們將在 **Day 10** 正式迎戰！
 
 ---
 
@@ -170,12 +201,12 @@ const getHeroInfo = (name) => ({
 
 ## 🎯 【實戰演武場】
 
-[📜 本日實戰任務：極速吟唱與隱形回傳的洗禮 (CodePen)](https://codepen.io/liwenchiou/pen/D03-ArrowFunctions)
+[📜 本日實戰任務：極速吟唱與隱形回傳的洗禮 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019cf60a-55d7-7569-9b5a-2b6c94a1d42e)
 [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 
 ### **⚔️ 任務鑑定條件：**
 
-1.  [📜 本日實戰任務：極速吟唱與隱形回傳的洗禮 (CodePen)](https://codepen.io/liwenchiou/pen/D03-ArrowFunctions)
+1.  [📜 本日實戰任務：極速吟唱與隱形回傳的洗禮 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019cf60a-55d7-7569-9b5a-2b6c94a1d42e)
 2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：極速吟唱鑑定 (成就感發掘)**：
       - 1.今天成功把 4 行代碼壓縮成 1 行時，有沒有感受到邏輯瞬間「變輕了」的快感？
