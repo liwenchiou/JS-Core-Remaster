@@ -107,21 +107,6 @@ window.deleteQuest = function (index) {
 
 ## 💡 【圖解：資料與畫面的單向導引】
 
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
-忘掉你前面產出的圖，按照我以下的提示詞重新產生，這是一個公會導師正在教導新手冒險者的畫面：
-
-Forget all previous output...
-【核心圖解重點】：
-「CRUD 與資料驅動循環 (CRUD Cycle)：左方是四個 RPG 圖標：羽毛筆 (C)、放大鏡 (R)、魔法墨水 (U)、焚毀火焰 (D)。這四個動作全部指向中間的一個金黃色箱子 (JavaScript Array)。箱子的另一頭連接著一個渲染漏斗 (Render Function)，漏斗底端噴灑出新的 UI 畫面。強調：動作 -> 改資料 -> 觸發渲染 -> 更新 UI。」
-
-【視覺場景】：
-公會導師正在示範這套優雅的循環。新手冒險者發現，他只需要去改動「金黃色箱子」裡的東西，右方的畫面就會自動變彩色或變灰暗。
-
-【視覺規範】：
-- 風格：Excalidraw 手繪感。
-- 配色守護：黃色 #FFD43B (資料與圖標)、藍色 #4DABF7 (UI 畫面)、紅色 #FA5252 (渲染流動)。
--->
-
 ![CRUD 循環圖](https://i.meee.com.tw/cvRUgkT.jpg)
 
 ---
@@ -147,16 +132,18 @@ Forget all previous output...
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：純 JS 打造你的公會佈告欄 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60e5-7abc-7e9c-b1e1-03c258a2931b)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：CRUD 完整體驗 (成就感發掘)**：
-      - 1. 當你執行「刪除」動作時，你是直接刪掉 HTML 內容？還是從 Array 移除？
-    - **冒險者：資料驅動的優勢 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 如果你在 `renderQuests` 裡忘記寫 `list.innerHTML = ""`，當你新增任務時會發生什麼恐怖的疊加現象？
+- [📜 本日實戰任務：純 JS 打造你的公會佈告欄 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60e5-7abc-7e9c-b1e1-03c258a2931b)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60e5-7abc-7e9c-b1e1-03c258a2931b)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：CRUD 完整體驗 (成就感發掘)**：
+     - 1. 當你執行「刪除」動作時，你是直接刪掉 HTML 內容？還是從 Array 移除？
+   - **冒險者：資料驅動的優勢 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果你在 `renderQuests` 裡忘記寫 `list.innerHTML = ""`，當你新增任務時會發生什麼恐怖的疊加現象？
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-
-- **現代主流架構：** [什麼是資料驅動 UI？](https://modernweb.com/what-is-data-driven-ui/)
-- **Array 方法複習：** [splice, forEach, push (Day 06-08)](file:///Users/qiuliwen/Documents/工程師/project/JS-Core-Remaster/Posts/01-JS-Basics/README.md)

@@ -144,8 +144,13 @@ console.log(npc.dataset.id); // "99"
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：DOM 樹的精準抓取術 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0bc6-2634-7689-a9f2-ede41e27097b)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：DOM 樹的精準抓取術 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0bc6-2634-7689-a9f2-ede41e27097b)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0bc6-2634-7689-a9f2-ede41e27097b)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：捕獲 NPC 鑑定 (成就感發掘)**：
       - 1.  今天第一次在 Consle 中成功印出瀏覽器上的標題時，有沒有一種「代碼終於與世界連接」的感覺？
     - **冒險者：名單與陣列之謎 (理性挑戰)**：**[⚡ 觀念辨析]**

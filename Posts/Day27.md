@@ -52,13 +52,13 @@
 1. **修改資料 (State)**：例如將 HP 從 100 改成 80。
 2. **重新投影 (Render)**：呼叫渲染函式，它會根據新資料重新畫一遍。
 
-> **🏹 導師的辨析圖：手動操控 vs 資料驅動**
->
-> | 特性           | 手動操控 (DOM-driven) |   資料驅動 (State-driven)    |
-> | :------------- | :-------------------: | :--------------------------: |
-> | **修改對象**   |   直接改 HTML 標籤    |       只改 JS 物件資料       |
-> | **程式碼長相** |  充滿 querySelector   | 充滿 Array 方法 (map/filter) |
-> | **維護難度**   |   極高 (改 A 壞 B)    |   低 (資料清純，畫面好修)    |
+**🏹 導師的辨析圖：手動操控 vs 資料驅動**
+
+| 特性           | 手動操控 (DOM-driven) |   資料驅動 (State-driven)    |
+| :------------- | :-------------------: | :--------------------------: |
+| **修改對象**   |   直接改 HTML 標籤    |       只改 JS 物件資料       |
+| **程式碼長相** |  充滿 querySelector   | 充滿 Array 方法 (map/filter) |
+| **維護難度**   |   極高 (改 A 壞 B)    |   低 (資料清純，畫面好修)    |
 
 > **導師的圖解心法：** 整個流程就像是一場電影放映。你的 State 就是「底片」，Render 函式就是「投影機」。如果你想改變螢幕上的內容，你該做的是換一張底片，而不是跑去螢幕前面塗鴉。
 
@@ -146,16 +146,18 @@ function takeDamage(amount) {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：資料驅動與狀態指揮實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0262-a5be-7489-bfa5-5ad29caff8d6)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：指揮官啟蒙 (成就感發掘)**：
-      - 1. 你能成功透過修改 `state` 陣列，讓畫面自動多出一隻史萊姆嗎？
-    - **冒險者：戰略大師 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 為什麼說「資料驅動」比起「手動操作 DOM」更適合團隊協作？
+- [📜 本日實戰任務：資料驅動與狀態指揮實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0262-a5be-7489-9bfa-5ad29caff8d6)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0262-a5be-7489-9bfa-5ad29caff8d6)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：指揮官啟蒙 (成就感發掘)**：
+     - 1. 你能成功透過修改 `state` 陣列，讓畫面自動多出一隻史萊姆嗎？
+   - **冒險者：戰略大師 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 為什麼說「資料驅動」比起「手動操作 DOM」更適合團隊協作？
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-
-- **進階思維：** [為什麼我們應該避免直接操作 DOM？](https://dev.to/ruppysuppy/why-you-should-avoid-direct-dom-manipulation-in-2023-4e4n)
-- **下站伏筆：** [Day 28：揭開 React 的面紗 —— 原來這就是我們練了 30 天的東西](https://react.dev/learn)

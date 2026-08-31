@@ -67,13 +67,13 @@ const lootBox = {
     });
     ```
 
-> **🏹 導師的辨析圖：掃描儀選擇手冊**
->
-> | 工具名稱    | 提取目標    | 產出形式 | 最強實戰場景           |
-> | :---------- | :---------- | :------: | :--------------------- |
-> | `keys()`    | 標籤名      | 字串陣列 | 檢查「有哪些欄位」     |
-> | `values()`  | 內容值      | 資料陣列 | 計算「總價值、總點數」 |
-> | `entries()` | 標籤 + 內容 | 二維陣列 | 進行複雜資料轉換 (Map) |
+**🏹 導師的辨析圖：掃描儀選擇手冊**
+
+| 工具名稱    | 提取目標    | 產出形式 | 最強實戰場景           |
+| :---------- | :---------- | :------: | :--------------------- |
+| `keys()`    | 標籤名      | 字串陣列 | 檢查「有哪些欄位」     |
+| `values()`  | 內容值      | 資料陣列 | 計算「總價值、總點數」 |
+| `entries()` | 標籤 + 內容 | 二維陣列 | 進行複雜資料轉換 (Map) |
 
 ---
 
@@ -168,17 +168,21 @@ Object.entries(loot).forEach(([item, count]) => {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：寶箱全方位清點實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0633-f066-7cf6-aba2-040197d7c33d)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：掃描儀直覺感 (成就感發掘)**：
-      - 1.  當你第一次看到物件內容整齊地排成名單（陣列）「吐」出來時，你覺得哪個方法最有魔力？
-    - **冒險者：數據統計策略 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1.  如果我們想計算一個物件中所有數值屬性的總合（例如總攻擊力），你會建議夥伴用 `keys` 還是 `values`？為什麼？
-3.  任務完成後，你的名字將永遠標記在公會的英雄榜上！
+- [📜 本日實戰任務：原理篇 —— 物件導航：如何優雅地遍歷與操作你的寶箱 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0633-f066-7cf6-aba2-040197d7c33d)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務：原理篇 —— 物件導航：如何優雅地遍歷與操作你的寶箱 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0633-f066-7cf6-aba2-040197d7c33d)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：掃描儀直覺感 (成就感發掘)**：
+     - 1. 當你第一次看到物件內容整齊地排成名單（陣列）「吐」出來時，你覺得哪個方法最有魔力？
+   - **冒險者：數據統計策略 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果我們想計算一個物件中所有數值屬性的總合（例如總攻擊力），你會建議夥伴用 `keys` 還是 `values`？為什麼？
+3. 任務完成後，你的名字將永遠標記在公會的英雄榜上！
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
 
 - **MDN 官方文獻：** [Object.keys() 詳解](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-- **實戰導引：** [Object.fromEntries() — 將清單轉回物件](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)

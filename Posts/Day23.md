@@ -50,33 +50,38 @@ JSON (JavaScript Object Notation) 是一種純文字格式。為了傳輸方便�
 
 當資料回來是 `null` 或 `undefined` 時，我們通常需要一個預設值。
 
-> **🏹 導師的精準校力表：**
->
-> | 語法               | 觸發備案的條件             | 為什麼要換？                                               |
-> | :----------------- | :------------------------- | :--------------------------------------------------------- |
-> | **`||` (OR)**       | 只要是 falsy (0, "", false, null...) | **缺點**：如果等級是 0，也會被誤判成「沒等級」而變回預設值。 |
-> | **`??` (Nullish)** | **僅限** null 或 undefined | **勝出**：精準守護 0 與 空字串，只有真沒資料才觸發預設值。 |
+---
+
+### `||` (OR)
+
+- 觸發條件：只要左側是 falsy 值
+  - `0`
+  - `""`
+  - `false`
+  - `null`
+  - `undefined`
+  - `NaN`
+- 缺點：
+  - `0` 可能是合法資料
+  - `""` 可能是合法資料
+  - 仍然會被替換成預設值
+
+### `??` (Nullish Coalescing)
+
+- 觸發條件：
+  - `null`
+  - `undefined`
+- 優點：
+  - 保留 `0`
+  - 保留 `false`
+  - 保留 `""`
+  - 只有真正沒有值時才使用預設值
 
 ---
 
 ## 🛡️ 【本日圖解心法：防禦偵測術】
 
 > **導師的圖解心法：** 想像你在黑暗的山洞裡尋寶（讀取深層物件）。如果你直接伸手（傳統讀取），可能會摸到空處而摔下懸崖（Runtime Error）。如果你發動偵測波（?.），它會先回彈告訴你前面的路斷了，讓你安全地停下來。
-
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
-忘掉你前面產出的圖，按照我以下的提示詞重新產生：
-
-Forget all previous output...
-【核心圖解重點】：
-「可選鏈結與空值合併示意圖。左側是勇者用法杖發射偵測波 (?. 符號)，路徑上點擊物件 A -> B -> C。如果 B 缺失了，偵測波直接回傳一個緩衝墊 (undefined)，而不是爆炸。右側對比：?? 攔截器只有在 null/undefined 掉下來時才會接住，並補上一個預設禮物盒。」
-
-【視覺場景】：
-公會導師正手把手教新手如何使用法杖進行「安全取物」。
-
-【視覺規範】：
-- 風格：Excalidraw 手繪感。
-- 配色守護：粉紫色 #BE4BDB (魔法偵測)、黃色 #FFD43B (核心屬性)、紅色 #FA5252 (傳統報錯區)。
--->
 
 ![防禦偵測術原理圖](https://i.meee.com.tw/dJTPdhM.jpg)
 
@@ -120,17 +125,20 @@ console.log("當前位置：", city);
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：殘缺資料的救援行動 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d610f-6558-738c-94b5-451bcf8733ba)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：偵測發動術 (成就感發掘)**：
-      - 1. 你是否成功使用 `?.` 避免了讀取不存在屬性時的紅字報錯？
-    - **冒險者：預設值陷阱 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 測試 `const level = 0 || 10;` 與 `const level = 0 ?? 10;` 的結果有什麼不同？為什麼這對遊戲開發很重要？
+- [📜 本日實戰任務：殘缺資料的救援行動 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d610f-6558-738c-94b5-451bcf8733ba)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d610f-6558-738c-94b5-451bcf8733ba)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：偵測發動術 (成就感發掘)**：
+     - 1. 你是否成功使用 `?.` 避免了讀取不存在屬性時的紅字報錯？
+   - **冒險者：預設值陷阱 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 測試 `const level = 0 || 10;` 與 `const level = 0 ?? 10;` 的結果有什麼不同？為什麼這對遊戲開發很重要？
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
 
 - **精深研究：** [MDN 可選鏈結 ?.](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- **精深研究：** [MDN 空值合併 ??](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
-- **下站伏筆：** [預習 Day 24：Try...Catch —— 穿上你的復活保險甲](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/try...catch)

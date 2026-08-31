@@ -137,8 +137,13 @@ async function getSupplies() {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：復活甲穿戴實習 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6117-8f5d-707b-95f8-113466ffddea)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：復活甲穿戴實習 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6117-8f5d-707b-95f8-113466ffddea)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6117-8f5d-707b-95f8-113466ffddea)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：捕捉發動術 (成就感發掘)**：
       - 1. 你是否成功使用 `try...catch` 攔截了錯誤，而不是讓瀏覽器直接紅字噴錯？
     - **冒險者：清場大師 (理性挑戰)**：**[⚡ 觀念辨析]**
@@ -151,4 +156,4 @@ async function getSupplies() {
 
 - **精深研究：** [MDN Try...Catch 語法](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/try...catch)
 - **進階對決：** [如何自定義一個 Error 物件？](https://javascript.info/custom-errors)
-- **下站伏筆：** [Phase 4 終極實戰：打造你自己的異世界氣象觀測站](https://openweathermap.org/api)
+

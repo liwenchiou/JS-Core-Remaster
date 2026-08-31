@@ -148,16 +148,19 @@ isLoggedIn && showDashboard();
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：邏輯開關的防禦與默契 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b99-c203-764c-b053-59cbcba7cf30)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：短路安全感鑑定 (成就感發掘)**：
-      - 1.  今天第一次用 `??` 成功防禦住「無效攻擊 (null/undefined)」時，有沒有一種心靈安定的感覺？
-    - **冒險者：Falsy 的冤獄 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1.  為什麼導師說數值 `0` 經常在 `||` 中被誤判？這在顯示「勇者剩餘血量」時會造成什麼慘劇？
-3.  任務完成後，你的名字將永遠標記在公會的英雄榜上！
+- [📜 本日實戰任務：邏輯開關的防禦與默契 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b99-c203-764c-b053-59cbcba7cf30)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b99-c203-764c-b053-59cbcba7cf30)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：短路安全感鑑定 (成就感發掘)**：
+     - 1. 今天第一次用 `??` 成功防禦住「無效攻擊 (null/undefined)」時，有沒有一種心靈安定的感覺？
+   - **冒險者：Falsy 的冤獄 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 為什麼導師說數值 `0` 經常在 `||` 中被誤判？這在顯示「勇者剩餘血量」時會造成什麼慘劇？
+3. 任務完成後，你的名字將永遠標記在公會的英雄榜上！
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-
-- **MDN 官方文獻：** [Nullish coalescing (??) 指南](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)

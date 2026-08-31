@@ -52,13 +52,13 @@
 - **適用場景**：捲軸滾動 (Scroll) 事件、射擊遊戲、搶票按鈕。
 - **核心邏輯**：在計時期間內，直接無視所有的觸發請求。
 
-> **🏹 導師的辨析圖：防抖 vs 節流**
->
-> | 特性         | 防抖 (Debounce)  | 節流 (Throttle) |
-> | :----------- | :--------------: | :-------------: |
-> | **目標焦點** |   等待最後一次   |  維持穩定頻率   |
-> | **觸發時機** | 停止動作後才執行 |    定期執行     |
-> | **比喻**     |   影印回城讀條   |   技能冷卻 CD   |
+  **🏹 導師的辨析圖：防抖 vs 節流**
+
+| 特性         | 防抖 (Debounce)  | 節流 (Throttle) |
+| :----------- | :--------------: | :-------------: |
+| **目標焦點** |   等待最後一次   |  維持穩定頻率   |
+| **觸發時機** | 停止動作後才執行 |    定期執行     |
+| **比喻**     |   影印回城讀條   |   技能冷卻 CD   |
 
 ### 3. 圖解閉包守衛
 
@@ -146,16 +146,18 @@ const search = debounce(fetchData, 300);
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：冷卻大師與防抖節流實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0258-e784-700e-9d0e-5145562c1fee)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：冷卻大師 (成就感發掘)**：
-      - 1. 能成功防止按鈕連點導致的重複 Log 嗎？
-    - **冒險者：時序操控者 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 如果設定 `delay` 為 1000ms，快速點擊按鈕 5 次（每次間隔 200ms），Debounce 與 Throttle 分別會執行幾次？
+- [📜 本日實戰任務：冷卻大師與防抖節流實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0258-e784-700e-9d0e-5145562c1fee)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019e0258-e784-700e-9d0e-5145562c1fee)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：冷卻大師 (成就感發掘)**：
+     - 1. 能成功防止按鈕連點導致的重複 Log 嗎？
+   - **冒險者：時序操控者 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果設定 `delay` 為 1000ms，快速點擊按鈕 5 次（每次間隔 200ms），Debounce 與 Throttle 分別會執行幾次？
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-
-- **MDN 官方文獻：** [setTimeout 與非同步](https://developer.mozilla.org/zh-TW/docs/Web/API/setTimeout)
-- **視覺化學習：** [Debounce vs Throttle 可視化展示](https://demo.nimius.net/debounce_throttle/)

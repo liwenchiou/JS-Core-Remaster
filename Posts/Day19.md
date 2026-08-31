@@ -135,8 +135,13 @@ console.log("C: 結束修煉"); // 同步
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：預測時空的流向 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60f3-45ac-75ac-bf45-eb5b148f60d2)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：預測時空的流向 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60f3-45ac-75ac-bf45-eb5b148f60d2)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60f3-45ac-75ac-bf45-eb5b148f60d2)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：時空裂縫預測 (成就感發掘)**：
       - 1. 如果你在 `setTimeout` 裡面再寫一個 `setTimeout`，誰會先跑？
     - **冒險者：阻塞的代價 (理性挑戰)**：**[⚡ 觀念辨析]**

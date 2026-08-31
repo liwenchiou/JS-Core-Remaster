@@ -156,8 +156,13 @@ const army = [new Slime("小綠", 10), new Slime("小藍", 15)];
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：史萊姆戰鬥模擬器 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b86-e2e0-7498-b538-17f381526522)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：史萊姆戰鬥模擬器 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b86-e2e0-7498-b538-17f381526522)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0b86-e2e0-7498-b538-17f381526522)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：設計師的秩序感 (成就感發掘)**：
       - 1.  看著那些屬性完全對齊、整齊劃一的軍團，你是否感受到從「搬運工」晉升為「設計師」的秩序美感？
     - **冒險者：共同進化的秘密 (理性挑戰)**：**[⚡ 觀念辨析]**

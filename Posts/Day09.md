@@ -54,13 +54,13 @@
     const expGains = monsters.map((m) => m.exp * 1.5);
     ```
 
-> **🏹 導師的辨析圖：生產線職位對照**
->
-> | 方法      |   回傳值    | 原始陣列長度 | 核心用途                 |
-> | :-------- | :---------: | :----------: | :----------------------- |
-> | `forEach` | `undefined` |     不變     | 執行動作 (印 Log / 發信) |
-> | `filter`  | `New Array` |  縮短或相同  | 剔除不合格資料           |
-> | `map`     | `New Array` |   必定相同   | 轉換資料格式 / 加工      |
+ **🏹 導師的辨析圖：生產線職位對照**
+
+ | 方法      |   回傳值    | 原始陣列長度 | 核心用途                 |
+ | :-------- | :---------: | :----------: | :----------------------- |
+ | `forEach` | `undefined` |     不變     | 執行動作 (印 Log / 發信) |
+ | `filter`  | `New Array` |  縮短或相同  | 剔除不合格資料           |
+ | `map`     | `New Array` |   必定相同   | 轉換資料格式 / 加工      |
 
 ### 2. 進階連鎖技：Method Chaining
 
@@ -168,8 +168,13 @@ const totalAtk = party.reduce((sum, member) => sum + member.atk, 0);
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：全自動物資處理中心實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d065e-ea56-739e-b01c-6bbebc09f916)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：全自動物資處理中心實驗室 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d065e-ea56-739e-b01c-6bbebc09f916)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d065e-ea56-739e-b01c-6bbebc09f916)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：自動化解放感 (成就感發掘)**：
       - 1.  第一次試著把 `filter` 跟 `map` 連在一起寫時，你有沒有感受到一種「邏輯連鎖」的快快感？
     - **冒險者：職位選擇權 (理性挑戰)**：**[⚡ 觀念辨析]**

@@ -67,21 +67,6 @@ async function getSupplies() {
 
 > **導師的圖解心法：** 想像你在窗口等物資。第一眼看到飛機飛過來丟下包裹（Response），但包裹是封死的，你看不見裡面的藥水。你必須拿出「拆箱刀 (.json())」，再次等待它解開，才能真正拿到裝備。
 
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
-忘掉你前面產出的圖，按照我以下的提示詞重新產生：
-
-Forget all previous output...
-【核心圖解重點】：
-「Fetch 兩階段流程圖。左側是冒險者發出 fetch 信號。第一步：await fetch() 箭頭指向一個封閉的箱子 (Response Object)，上面寫著 status: 200。第二步：await res.json() 箭頭指向箱子被打開，噴出金幣與裝備 (JSON Data)。」
-
-【視覺場景】：
-公會信鴿帶著包裹降落在桌面上，導師正拿著放大鏡檢查狀態碼。
-
-【視覺規範】：
-- 風格：Excalidraw 手繪感。
-- 配色守護：粉藍色 #4DABF7 (網路請求)、亮橘色 #FF922B (等待解析)、亮綠色 #51CF66 (最終資料流)。
--->
-
 ![Fetch 兩階段領包圖](https://i.meee.com.tw/nwm2AbC.jpg)
 
 ---
@@ -135,8 +120,13 @@ async function getData() {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：跨國物資搬運實作 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6107-9fbd-7913-ac17-47a0ecaa5c15)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：跨國物資搬運實作 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6107-9fbd-7913-ac17-47a0ecaa5c15)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6107-9fbd-7913-ac17-47a0ecaa5c15)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：信鴿召喚術 (成就感發掘)**：
       - 1. 你是否成功從 `JSONPlaceholder` 獲取到一筆資料並顯示在 console 中？
     - **冒險者：防禦加護 (理性挑戰)**：**[⚡ 觀念辨析]**
@@ -149,4 +139,4 @@ async function getData() {
 
 - **精深研究：** [MDN 使用 Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
 - **視覺化複習：** [什麼是 REST API？(圖解 GET/POST)](https://restfulapi.net/)
-- **下站伏筆：** [預習 Day 23：JSON —— 異世界的通用溝通手札](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/JSON)
+

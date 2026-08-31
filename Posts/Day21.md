@@ -52,21 +52,6 @@ async function startQuest() {
 
 > **導師的圖解心法：** 想像你在公會大廳（Main Thread）中畫了一個發光的圓圈（Async Function）。當你在圓圈內發動 `await` 時，圓圈內的時間會暫停，但圓圈外的公會成員依然在正常活動。當 `await` 的任務帶回資料後，圓圈內的時間才會恢復流動。
 
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
-忘掉你前面產出的圖，按照我以下的提示詞重新產生，這是一個公會導師正在教導新手冒險者的畫面：
-
-Forget all previous output...
-【核心圖解重點】：
-「Async/Await 時空暫停泡泡：畫面中間是一個藍色半透明的防護罩 (Async Scope)。防護罩內，一名冒險者正站在寫著 "await" 的齒輪前，齒輪卡住了背景的時間流。防護罩外，公會的其他成員 (Event Loop) 正在正常走動、喝水、搬東西。防護罩內部的箭頭標示：等待 -> 拿到資料 -> 時間恢復。」
-
-【視覺場景】：
-公會導師站在防護罩邊緣，向新手解釋：雖然你在泡泡裡感覺時間停了，但外面的世界並沒有因為你而卡死。
-
-【視覺規範】：
-- 風格：Excalidraw 手繪感。
-- 配色守護：淺藍色 #E7F5FF (防護罩/Async 範圍)、黃色 #FFD43B (await 齒輪)、深灰色 #495057 (背景 Event Loop 流動)。
--->
-
 ![時空暫停原理圖](https://i.meee.com.tw/pevcYPY.jpg)
 
 ---
@@ -121,12 +106,17 @@ async function handleQuest() {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：時空暫停術初體驗 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6101-24f8-70fa-a084-61e796447aa7)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：語法重構術 (成就感發掘)**：
-      - 1. 你是否成功將昨天的「購買武器」改寫為 `async/await` 版本？代碼是不是清爽了很多？
-    - **冒險者：錯誤攔截機制 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 如果你在 `async` 函式中沒有寫 `try...catch`，當任務出錯時，這個「錯誤」會流向哪裡？（它依然會變成 Promise 的 reject 狀態嗎？）
+- [📜 本日實戰任務：時空暫停術初體驗 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6101-24f8-70fa-a084-61e796447aa7)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d6101-24f8-70fa-a084-61e796447aa7)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：語法重構術 (成就感發掘)**：
+     - 1. 你是否成功將昨天的「購買武器」改寫為 `async/await` 版本？代碼是不是清爽了很多？
+   - **冒險者：錯誤攔截機制 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果你在 `async` 函式中沒有寫 `try...catch`，當任務出錯時，這個「錯誤」會流向哪裡？（它依然會變成 Promise 的 reject 狀態嗎？）
 
 ---
 
@@ -134,4 +124,4 @@ async function handleQuest() {
 
 - **精深研究：** [MDN Async function](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function)
 - **進階對決：** [為什麼 Async/Await 其實也是一種 Promise？](https://v8.dev/features/top-level-await)
-- **下站伏筆：** [預習 Day 22：Fetch API —— 如何用 Async/Await 搬運異世界物資](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
+

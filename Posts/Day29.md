@@ -121,6 +121,7 @@ function TodoApp() {
 ## 🎯 【實戰演武場】
 
 1.  [📜 本日實戰任務題目 (CodePen：重鑄聖劍佈告欄)](https://codepen.io/editor/liwenchiou/pen/019e0270-8b36-7cac-b4be-66d367e77e0e)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
 2.  **任務需求**：
     - [ ] 觀察代碼，指出哪裡用到了「展開運算子 (...)」。
     - [ ] 試著增加一個「清空所有任務」的按鈕。提示：只要把 state 改成 `[]` 就行了！

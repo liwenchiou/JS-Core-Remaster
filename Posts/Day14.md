@@ -127,8 +127,13 @@ btn.addEventListener("click", (e) => {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：互動陷阱與監聽儀式 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d1088-d0dc-7f8d-81d7-556fc47487f3)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：互動陷阱與監聽儀式 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d1088-d0dc-7f8d-81d7-556fc47487f3)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d1088-d0dc-7f8d-81d7-556fc47487f3)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：互動覺醒鑑定 (成就感發掘)**：
       - 1.  當你看見按鈕點下去後，瀏覽器真的說出你寫的咒語時，有沒有感受到一種「掌控世界互動」的快感？
     - **冒險者：垃圾堆之謎 (理性挑戰)**：**[⚡ 觀念辨析]**

@@ -162,16 +162,18 @@ btn.addEventListener("click", () => {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：掌握時間的節奏 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60da-9744-7836-9131-7b91e1821b8b)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：定時炸彈拆除 (成就感發掘)**：
-      - 1. 你是否成功接住 Timer ID 並在它爆炸前將其 `clear` 掉？
-    - **冒險者：循環的噩夢 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 如果你沒關掉 `setInterval` 就跳轉頁面，計時器會發生什麼事？（雖然暫時看不到，但它還在後台偷跑嗎？）
+- [📜 本日實戰任務：掌握時間的節奏 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60da-9744-7836-9131-7b91e1821b8b)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60da-9744-7836-9131-7b91e1821b8b)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：定時炸彈拆除 (成就感發掘)**：
+     - 1. 你是否成功接住 Timer ID 並在它爆炸前將其 `clear` 掉？
+   - **冒險者：循環的噩夢 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果你沒關掉 `setInterval` 就跳轉頁面，計時器會發生什麼事？（雖然暫時看不到，但它還在後台偷跑嗎？）
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
-
-- **MDN 官方文獻：** [SetTimeout 原理](https://developer.mozilla.org/zh-TW/docs/Web/API/setTimeout)
-- **非同步與 Event Loop 預告：** [為什麼 0 秒不等於 0 秒？](https://web.dev/run-scripts-at-the-right-time/)

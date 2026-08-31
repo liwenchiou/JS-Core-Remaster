@@ -1,5 +1,3 @@
-# Day 15：原理篇 —— 【圖解】事件委派：一人領信，全家收件
-
 > **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
@@ -137,8 +135,13 @@ document.querySelector("#parent").addEventListener("click", (e) => {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：一人領信，全家收件 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d10af-816f-7146-bdce-6188a48b7eee)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：一人領信，全家收件 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d10af-816f-7146-bdce-6188a48b7eee)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d10af-816f-7146-bdce-6188a48b7eee)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：代勞者鑑定 (成就感發掘)**：
       - 1.  今天成功讓「爸爸 (父元素)」代領了「兒子 (子元素)」的信件後，有沒有感受到代碼變得很簡潔、很有秩序？
     - **冒險者：委派的藝術感 (理性挑戰)**：**[⚡ 觀念辨析]**
@@ -149,4 +152,4 @@ document.querySelector("#parent").addEventListener("click", (e) => {
 
 ## 📚 【圖書館卷軸：延伸學習】
 
-- **MDN 官方文獻：** [事件委派原理與實務](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Building_blocks/Events#event_delegation)
+

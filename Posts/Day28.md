@@ -134,6 +134,9 @@ React 的聖劍裡內建了 **「虛擬 DOM (Virtual DOM)」**。它會拿著兩
 ## 🎯 【實戰演武場】
 
 1.  [📜 本日實戰任務題目 (CodePen：JS vs React 對照)](https://codepen.io/editor/liwenchiou/pen/019e0269-21f9-77b6-b261-cabbe4f114f4)
+
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
 2.  **任務需求**：
     - [ ] 閱讀 CodePen 中的兩段代碼，指出 React 版本中哪一部分對應了 Day 07 的閉包。
     - [ ] 試著解釋：為什麼在 React 中我們不需要寫 `document.querySelector`？
@@ -143,4 +146,3 @@ React 的聖劍裡內建了 **「虛擬 DOM (Virtual DOM)」**。它會拿著兩
 ## 📚 【圖書館卷軸：延伸學習】
 
 - **官方地圖：** [React 官方文件 (新版)](https://react.dev/)
-- **深度研究：** [為什麼 React 選擇 Functional Programming？](https://medium.com/programming-heritage/why-functional-programming-in-react-4e9e4f6e6e2b)

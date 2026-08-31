@@ -203,8 +203,13 @@ function captureLoot(firstGold, ...others) {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：影印術與麻袋收集器 (CodePen)](https://codepen.io/liwenchiou/pen/D06-Spread-Rest)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：原理篇 —— 影印術！展開運算子 ...：破解傳址詛咒的終極神技 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d011e-9034-7cf4-8938-4e831a07e4f9)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d011e-9034-7cf4-8938-4e831a07e4f9)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：影印術掌握度 (成就感發掘)**：
       - 1.今天成功使用 `...` 斷開影子分身的那一刻，你有沒有感受到數據終於「受你控制」的自由感？
     - **冒險者：影印機的選擇 (理性挑戰)**：**[⚡ 觀念辨析]**
@@ -215,6 +220,5 @@ function captureLoot(firstGold, ...others) {
 
 ## 📚 【圖書館卷軸：延伸學習】
 
-- **MDN 官方文獻：** [展開語法 (Spread Syntax)](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 - **深拷貝最新武器：** [structuredClone() 全面指南](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)
 - **其餘參數秘笈：** [Rest Parameters 完整指南](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/rest_parameters)

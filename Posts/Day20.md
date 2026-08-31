@@ -61,21 +61,6 @@ Promise 是一個對「未來某個時間點會完成」的任務的封裝。它
 
 > **導師的圖解心法：** 想像你把材料交給矮人後，他吐出一顆發光的球（Promise）。這顆球最初是灰色的（Pending）。一段時間後，如果球變綠了，它會自動呼叫你的 `.then()` 邏輯；如果球變紅了，它會自動跳到你的 `.catch()` 區塊。
 
-<!-- 🎨 圖解提示詞 (導師專用，產後刪除) ：
-忘掉你前面產出的圖，按照我以下的提示詞重新產生，這是一個公會導師正在教導新手冒險者的畫面：
-
-Forget all previous output...
-【核心圖解重點】：
-「Promise 狀態轉換圖：中心是一個寫著 "Promise" 的球體，它有三個分支。上方是灰色的 "Pending" 狀態，旁邊畫著一個沙漏。分支 A 流向綠色的 "Resolve" 狀態，代表任務完成並帶回一個禮物盒 (Result)。分支 B 流向紅色的 "Reject" 狀態，代表任務失敗並帶回一個骷髏圖標 (Error)。」
-
-【視覺場景】：
-公會導師正在向新手展示這顆會變色的「契約之球」。新手驚訝地發現，他不需要去盯著矮人工作，只需要等球變色就好。
-
-【視覺規範】：
-- 風格：Excalidraw 手繪感。
-- 配色守護：灰色 #ADB5BD (等待)、亮綠色 #51CF66 (成功)、紅色 #FA5252 (失敗)、黃色 #FFD43B (核心球體)。
--->
-
 ![Promise 狀態圖](https://i.meee.com.tw/QnmE97O.jpg)
 
 ---
@@ -138,12 +123,17 @@ doTaskA()
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：簽下你的傳奇契約 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60fa-a6e7-7b42-a336-167749035707)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：契約發動術 (成就感發掘)**：
-      - 1. 你是否成功寫出一個隨機決定「成功」或「失敗」的 Promise？
-    - **冒險者：連續任務 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 在鏈式調用中，如果第一個 `.then` 失敗了，後面的 `.then` 還會跑嗎？（試著用 `.catch` 去抓看看！）
+- [📜 本日實戰任務：簽下你的傳奇契約 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60fa-a6e7-7b42-a336-167749035707)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60fa-a6e7-7b42-a336-167749035707)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：契約發動術 (成就感發掘)**：
+     - 1. 你是否成功寫出一個隨機決定「成功」或「失敗」的 Promise？
+   - **冒險者：連續任務 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 在鏈式調用中，如果第一個 `.then` 失敗了，後面的 `.then` 還會跑嗎？（試著用 `.catch` 去抓看看！）
 
 ---
 
@@ -151,4 +141,3 @@ doTaskA()
 
 - **精深研究：** [MDN 如何使用 Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Using_promises)
 - **視覺化複習：** [Promise 的三種狀態動圖](https://javascript.info/promise-basics)
-- **下站伏筆：** [預習 Async / Await：Promise 的終極語法糖](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/async_function)

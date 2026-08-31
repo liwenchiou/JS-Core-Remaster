@@ -182,17 +182,21 @@ btn.addEventListener("click", () => {
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：勇者的自動存檔點 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60c6-a870-751a-af22-c3e834165e2e)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
-    - **初心者：存檔術啟動 (成就感發掘)**：
-      - 1. 你是否成功打開 DevTools > Application 找到你的帳本並親手修改了數值？發現它也會同步改變網頁畫面的驚喜了嗎？
-    - **冒險者：打包拆箱的真相 (理性挑戰)**：**[⚡ 觀念辨析]**
-      - 1. 如果我們不用 `JSON.stringify` 直接把一個陣列存入 LocalStorage，拿出來時它會變什麼樣子？還能用 `forEach` 嗎？
-3.  任務完成後，你的名字將永遠標記在公會的英雄榜上！
+- [📜 本日實戰任務：勇者的自動存檔點 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60c6-a870-751a-af22-c3e834165e2e)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d60c6-a870-751a-af22-c3e834165e2e)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+   - **初心者：存檔術啟動 (成就感發掘)**：
+     - 1. 你是否成功打開 DevTools > Application 找到你的帳本並親手修改了數值？發現它也會同步改變網頁畫面的驚喜了嗎？
+   - **冒險者：打包拆箱的真相 (理性挑戰)**：**[⚡ 觀念辨析]**
+     - 1. 如果我們不用 `JSON.stringify` 直接把一個陣列存入 LocalStorage，拿出來時它會變什麼樣子？還能用 `forEach` 嗎？
+3. 任務完成後，你的名字將永遠標記在公會的英雄榜上！
 
 ---
 
 ## 📚 【圖書館卷軸：延伸學習】
 
 - **MDN 官方文獻：** [Window.localStorage 使用指南](https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage)
-- **Web Storage 真相對比：** [LocalStorage vs SessionStorage](https://web.dev/learn/forms/storage/)

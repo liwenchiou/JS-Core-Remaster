@@ -1,5 +1,3 @@
-# Day 05：原理篇 —— 改了 A 卻壞了 B？記憶體傳址與副本的真相
-
 > **本文同步分享於個人部落格：[Liwen Chiou | Digital Architect & Full-Stack Engineer](https://garden.liwen.studio/docs/learning/js-core-remaster)**
 
 ---
@@ -63,24 +61,19 @@ console.log(guildArmor.color);
 // 輸出：Red (導師驚嘆：連公會的鎧甲都跟著變紅了！)
 ```
 
-> **🏹 導師的辨析圖：傳值 vs 傳址**
->
-> | 特性              | 傳值 (Value)                 | 傳址 (Reference)            |
-> | :---------------- | :--------------------------- | :-------------------------- |
-> | **類型**          | 基礎型別 (Number, String...) | 物件型別 (Object, Array...) |
-> | **記憶體行為**    | 建立獨立的新空間             | 共用同一個空間位址          |
-> | **修動 A 的後果** | B 不受任何影響               | B 同步發生變化              |
+**🏹 導師的辨析圖：傳值 vs 傳址**
+
+| 特性              | 傳值 (Value)                 | 傳址 (Reference)            |
+| :---------------- | :--------------------------- | :-------------------------- |
+| **類型**          | 基礎型別 (Number, String...) | 物件型別 (Object, Array...) |
+| **記憶體行為**    | 建立獨立的新空間             | 共用同一個空間位址          |
+| **修動 A 的後果** | B 不受任何影響               | B 同步發生變化              |
 
 ---
 
 ### 3. 邏輯流向圖解
 
 > **導師的圖解心法：** 傳值（Value）就像是把金幣拿出來，**「再造一個完全一模一樣的影本」** 放進新櫃子。而傳址（Reference）則是把 **「第 404 號櫃子的提貨單」** 複製一份交給你。你們兩個手上拿著不同的單子，但領的是同一個櫃子裡的貨！
-
-<!-- 🎨 圖解提示詞 (導師專用)：
-【核心圖解重點】：「傳值 vs 傳址 (Copy by Value vs Reference)」左方是 Value：兩個獨立的箱子，數據是黃金，各自獨立。右方是 Reference：兩個存取卡 (Labels)，箭頭同時指向中間同一個巨大保險箱 (Heap Memory)。
-【視覺規範】：配色：黃色 #FFD43B (數據)、藍色 #4DABF7 (結構位址)。風格：Excalidraw 手繪。
--->
 
 ![傳值傳址真相圖](https://i.meee.com.tw/vIidV9p.jpg)
 
@@ -155,8 +148,13 @@ safeBackup.hp = 0; // 🛡️ 放心修改，原版 teamBase 依然健康
 
 ## 🎯 【實戰演武場】
 
-1.  [📜 本日實戰任務：影子分身鑑定與藥水失竊案 (CodePen)](https://codepen.io/liwenchiou/pen/D05-Primitives-vs-References)
-2.  將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
+- [📜 本日實戰任務：【原理】改了 A 卻壞了 B？記憶體傳址與副本的真相 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0040-eeba-70eb-8e4c-32eca31605b5)
+- [🛡️ 任務達成證明：QuestBoard 公會報到處](https://liwenchiou.github.io/QuestBoard-Remaster/)
+
+### ⚔️ 任務鑑定條件：
+
+1. 完成 [📜 本日實戰任務 (CodePen)](https://codepen.io/editor/liwenchiou/pen/019d0040-eeba-70eb-8e4c-32eca31605b5)。
+2. 將 CodePen 網址貼至 **QuestBoard**，並回填鑑定報告：
     - **初心者：提貨單之謎 (理性挑戰)**：**[⚡ 觀念辨析]**
       - 1.為什麼導師說物件傳遞的是「提貨單」？
       - 2.如果我把「英雄的心情物件」分享給兩位冒險者，結果其中一位改了心情，另一位看見的心情會受影響嗎？
@@ -169,4 +167,3 @@ safeBackup.hp = 0; // 🛡️ 放心修改，原版 teamBase 依然健康
 ## 📚 【圖書館卷軸：延伸學習】
 
 - **MDN 官方文獻：** [Data Structures and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values)
-- **實戰導引：** [理解 JavaScript 中 Pass-by-value 與 Pass-by-reference](https://medium.com/itsems-frontend/javascript-pass-by-value-reference-6184a480a4e)
